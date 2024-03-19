@@ -143,6 +143,7 @@ li {
                     /* color: #112d86; */
                     border: 1px solid #112d86;
                     padding: 10px 20px;
+                    white-space: nowrap;
                 }
             }
         }
