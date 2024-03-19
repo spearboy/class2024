@@ -138,7 +138,7 @@ li {
             li {
                 margin: 2px;
                 a {
-                    display: inline-block;
+                    display: block;
                     font-family: var(--fontN);
                     /* color: #112d86; */
                     border: 1px solid #112d86;
