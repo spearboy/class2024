@@ -159,12 +159,13 @@ li {
 
 .main__menu {
     padding: 40px 0px;
+    border-bottom: 1px solid #dcdcdc;
     ul {
         li {
             a {
                 color: #112d86;
                 font-family: var(--fontN);
-                line-height: 1.6;
+                line-height: 1.7;
                 &:hover {
                     text-decoration: underline;
                     text-underline-position: under;
@@ -172,4 +173,7 @@ li {
             }
         }
     }
+}
+.sample {
+    margin-bottom: 150px;
 }

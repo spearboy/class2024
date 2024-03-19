@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="../js/asset/js/plugin/default.min.css">
     <title>JavaScript</title>
 </head>
 
@@ -54,12 +55,125 @@
                 <li><a href="#">06-10. 객체 : 데이터 저장(키&값) : 표현방법10</a></li>
             </ul>
         </div>
-        <div class="main__sample"></div>
+        <div class="main__sample container">
+            <div id="sample01" class="sample">
+                <h3>01. 변수 : 데이터 저장</h3>
+                <p>자바스크립트에서 변수는 값을 저장하고 참조하는데 사용합니다.</p>
+                <p>변수를 사용하면 데이터를 저장하고 나중에 해당 데이터를 재사용 할 수 있습니다.</p>
+                <pre><code>{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    console.log("1__________")
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample02" class="sample">
+                <h3>02. 변수 : 데이터 저장 + 변경</h3>
+                <p>변수의 값은 저장과 참조가 가능하고 또한 값의 변경이 가능합니다.</p>
+                <pre><code>{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x = 300;
+    y = 400;
+    z = "jQuery";
+
+    console.log("2__________")
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample03" class="sample">
+                <h3>03. 변수 : 데이터 저장 + 변경 + 추가</h3>
+                <p></p>
+                <pre><code>{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jQuery";
+
+    console.log("3__________")
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample04" class="sample">
+                <h3>04. 상수 : 데이터 저장 + 데이터 변경X</h3>
+                <p></p>
+                <pre><code>{
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
+    //  변경 시도 코드 주석 해제시 에러
+    // x += 300;
+    // y += 400;
+    // z += "jQuery";
+
+    console.log("4__________")
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- footer -->
     <footer id="footer"></footer>
     <script>
+        window.onload = function () {
+            hljs.highlightAll();
+        }
         // 01. 변수 : 데이터 저장
         {
             let x = 100;
@@ -231,7 +345,9 @@
             console.log('펼침 사용')
             console.log(...arr1, ...arr2, ...arr3)
         }
+
     </script>
+    <script src="../js/asset/js/plugin/highlight.min.js"></script>
 </body>
 
 </html>
