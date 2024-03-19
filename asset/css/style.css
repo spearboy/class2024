@@ -121,7 +121,7 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 10px;
+        margin: 30px;
         cursor: pointer;
         img {
             width: 50px;
@@ -129,8 +129,10 @@ body {
         }
         span {
             font-family: var(--fontN);
-            margin-top: 5px;
+            margin-top: 8px;
             color: #fff;
+            white-space: nowrap;
+            font-size: 13px;
         }
     }
 }
