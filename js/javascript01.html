@@ -29,19 +29,19 @@
     <main id="main">
         <div class="main__menu container">
             <ul>
-                <li><a href="#">01. 변수 : 데이터 저장</a></li>
-                <li><a href="#">02. 변수 : 데이터 저장 + 변경</a></li>
-                <li><a href="#">03. 변수 : 데이터 저장 + 변경 + 추가</a></li>
-                <li><a href="#">04. 상수 : 데이터 저장 + 데이터 변경X</a></li>
+                <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
+                <li><a href="#sample02">02. 변수 : 데이터 저장 + 변경</a></li>
+                <li><a href="#sample03">03. 변수 : 데이터 저장 + 변경 + 추가</a></li>
+                <li><a href="#sample04">04. 상수 : 데이터 저장 + 데이터 변경X</a></li>
 
-                <li><a href="#">05-1. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
-                <li><a href="#">05-2. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
-                <li><a href="#">05-3. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
-                <li><a href="#">05-4. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
-                <li><a href="#">05-5. 배열 : 데이터 저장(여러개) : 표현방법5</a></li>
-                <li><a href="#">05-6. 배열 : 데이터 저장(여러개) : 표현방법6</a></li>
-                <li><a href="#">05-7. 배열 : 데이터 저장(여러개) : 표현방법7</a></li>
-                <li><a href="#">05-7. 배열 : 데이터 저장(여러개) : 표현방법8</a></li>
+                <li><a href="#sample05">05-1. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
+                <li><a href="#sample06">05-2. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
+                <li><a href="#sample07">05-3. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
+                <li><a href="#sample08">05-4. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
+                <li><a href="#sample09">05-5. 배열 : 데이터 저장(여러개) : 표현방법5</a></li>
+                <li><a href="#sample10">05-6. 배열 : 데이터 저장(여러개) : 표현방법6</a></li>
+                <li><a href="#sample11">05-7. 배열 : 데이터 저장(여러개) : 표현방법7</a></li>
+                <li><a href="#sample12">05-7. 배열 : 데이터 저장(여러개) : 표현방법8</a></li>
 
                 <li><a href="#">06-1. 객체 : 데이터 저장(키&값) : 표현방법1</a></li>
                 <li><a href="#">06-2. 객체 : 데이터 저장(키&값) : 표현방법2</a></li>
@@ -65,7 +65,6 @@
     let y = 200;
     let z = "javascript";
 
-    console.log("1__________")
     console.log(x)
     console.log(y)
     console.log(z)
@@ -83,7 +82,7 @@
             </div>
             <div id="sample02" class="sample">
                 <h3>02. 변수 : 데이터 저장 + 변경</h3>
-                <p>변수의 값은 저장과 참조가 가능하고 또한 값의 변경이 가능합니다.</p>
+                <p>변수는 데이터 저장과 변경이 가능합니다. 변수의 선언 후 변수변경 방법은 아래와 같습니다.</p>
                 <pre><code>{
     let x = 100;
     let y = 200;
@@ -93,7 +92,6 @@
     y = 400;
     z = "jQuery";
 
-    console.log("2__________")
     console.log(x)
     console.log(y)
     console.log(z)
@@ -102,16 +100,16 @@
                     <details>
                         <summary>결과 확인하기</summary>
                         <div>
-                            100<br>
-                            200<br>
-                            javascript
+                            300<br>
+                            400<br>
+                            jQuery
                         </div>
                     </details>
                 </div>
             </div>
             <div id="sample03" class="sample">
                 <h3>03. 변수 : 데이터 저장 + 변경 + 추가</h3>
-                <p></p>
+                <p>변수는 데이터 저장과 변경이 또 동적으로 추가가 가능합니다. 이미 선언된 변수에 '+'연산자를 사용하여 추가하는 방법은 아래와 같습니다.</p>
                 <pre><code>{
     let x = 100;
     let y = 200;
@@ -121,10 +119,62 @@
     y += 400;
     z += "jQuery";
 
-    console.log("3__________")
     console.log(x)
     console.log(y)
     console.log(z)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            400<br>
+                            600<br>
+                            javascriptjQuery
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample04" class="sample">
+                <h3>04. 상수 : 데이터 저장 + 데이터 변경X</h3>
+                <p>상수(const)로선언된 변수를 변경 할 수 없습니다. 예시는 아래와 같습니다.</p>
+                <pre><code>{
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
+    //  변경 시도 코드 주석 해제시 에러
+    // x += 300;
+    // y += 400;
+    // z += "jQuery";
+
+    console.log(x)
+    console.log(y)
+    console.log(z)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript<br><br>
+                            변경시도 == error
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample05" class="sample">
+                <h3>05-1. 배열 : 데이터 저장(여러개) : 표현방법1</h3>
+                <p>배열의 표현 방법중 한가지로 여기서 new Array()는 배열 객체의 생성자를 호출합니다. 생성자를 호출하면서 인자를 전달하지 않으면, 빈 배열이 생성됩니다. 이러한 방식은 배열을
+                    생성할 때 초기 크기나 초기 값을 지정할 필요가 없을 때 유용합니다. 예시는 아래와 같습니다.</p>
+                <pre><code>{
+    const arr = new Array();
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    console.log(arr[0])
+    console.log(arr[1])
+    console.log(arr[2])
 }</code></pre>
                 <div class="result">
                     <details>
@@ -137,22 +187,17 @@
                     </details>
                 </div>
             </div>
-            <div id="sample04" class="sample">
-                <h3>04. 상수 : 데이터 저장 + 데이터 변경X</h3>
-                <p></p>
+            <div id="sample06" class="sample">
+                <h3>05-2. 배열 : 데이터 저장(여러개) : 표현방법2</h3>
+                <p>배열의 표현 방법중 한가지로 여기서 new Array()는 배열 객체의 생성자를 호출합니다. 생성자를 호출하면서 인자를 전달함으로서, 값이 존재하는 배열이 생성됩니다. 이러한 방식은
+                    배열을
+                    생성할 때 초기 크기나 초기 값을 지정할 필요가 있을 때 유용합니다. 예시는 아래와 같습니다.</p>
                 <pre><code>{
-    const x = 100;
-    const y = 200;
-    const z = "javascript";
-    //  변경 시도 코드 주석 해제시 에러
-    // x += 300;
-    // y += 400;
-    // z += "jQuery";
+    const arr = new Array(100, 200, "javascript");
 
-    console.log("4__________")
-    console.log(x)
-    console.log(y)
-    console.log(z)
+    console.log(arr[0])
+    console.log(arr[1])
+    console.log(arr[2])
 }</code></pre>
                 <div class="result">
                     <details>
@@ -161,6 +206,185 @@
                             100<br>
                             200<br>
                             javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample07" class="sample">
+                <h3>05-3. 배열 : 데이터 저장(여러개) : 표현방법3</h3>
+                <p>JavaScript에서 배열을 생성하는 더 간단하고 일반적인 방법입니다.
+                    []는 배열 리터럴 표기법입니다. 배열 리터럴은 대괄호([]) 안에 요소를 나열하여 배열을 생성합니다. 만약 요소가 없는 경우에는 빈 배열이 생성됩니다.
+                    이 방법은 배열을 생성하고 초기화할 때 매우 자주 사용됩니다.
+                    예시는 아래와 같습니다.</p>
+                <pre><code>{
+    const arr = [];
+
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    console.log(arr[0])
+    console.log(arr[1])
+    console.log(arr[2])
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample08" class="sample">
+                <h3>05-4. 배열 : 데이터 저장(여러개) : 표현방법4</h3>
+                <p>
+                <p>JavaScript에서 배열을 생성하는 더 간단하고 일반적인 방법입니다.
+                    []는 배열 리터럴 표기법입니다. 배열 리터럴은 대괄호([]) 안에 요소를 나열하여 배열을 생성합니다. 만약 요소가 있는 경우에는 값이 존재하는 배열이 생성됩니다.
+                    이 방법은 배열을 생성하고 초기화할 때 매우 자주 사용됩니다.
+                    예시는 아래와 같습니다.</p>
+                </p>
+                <pre><code>{
+    const arr = [100, 200, "javascript"];
+
+    console.log(arr[0])
+    console.log(arr[1])
+    console.log(arr[2])
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample09" class="sample">
+                <h3>05-5. 배열 : 데이터 저장(여러개) : 표현방법5</h3>
+                <p>push()메서드를 사용하여 동적으로 배열의 값을 추가하는 방법 입니다. push()메서드는 배열의 마지막에 추가 됩니다. 예시는 아래와 같습니다.</p>
+                <pre><code>{
+    const arr = [100, 200, "javascript"];
+
+    arr.push(400)
+    console.log(arr[0])
+    console.log(arr[1])
+    console.log(arr[2])
+    console.log(arr[3])
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            javascript
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample10" class="sample">
+                <h3>05-6. 배열 : 데이터 저장(여러개) : 표현방법6</h3>
+                <p>다차원 배열은 배열 내에 또 다른 배열이 포함된 배열을 의미합니다. 즉, 배열 안에 배열이 중첩되어 있는 형태입니다. 2차원 배열은 행과 열로 이루어진 행렬(matrix)과 같은
+                    형태를 가집니다. 각 행은 배열의 요소이고, 각 요소는 또 다른 배열을 가지고 있습니다.이러한 형태의 다차원 배열은 데이터를 구조화하고 계층적으로 표현할 때 유용합니다. 예시는
+                    아래와 같습니다.</p>
+                <pre><code>{
+    const arr = [100, 
+        [200, 300, 
+            [400, 500, 
+                [600]
+            ]
+        ], 
+        ["javascript", "jQuery"]
+    ];
+
+    console.log(arr[0])
+    console.log(arr[1][0])
+    console.log(arr[1][1])
+    console.log(arr[2][0])
+    console.log(arr[2][1])
+    console.log(arr[1][2][2][0])
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            300<br>
+                            javascript<br>
+                            jQuery<br>
+                            600
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample11" class="sample">
+                <h3>05-7. 배열 : 데이터 저장(여러개) : 표현방법7</h3>
+                <p>이 코드는 배열 해체(destructuring)를 사용하여 배열 arr의 각 요소를 변수 a, b, c에 할당하는 예시를 보여줍니다.이러한 배열 해체는 배열에서 원하는 요소를 더
+                    쉽게 추출하여 변수에 할당할 때 유용합니다. 예시는 아래와 같습니다.</p>
+                <pre><code>{
+    const arr = [100, 300, "javascript"];
+    const [a, b, c] = arr;
+
+    console.log(a)
+    console.log(b)
+    console.log(c)
+}
+{
+    const arr = ['user', 'rank', [300, 400]];
+    const [a, b, [x, y]] = arr;
+
+    console.log(a)
+    console.log(b)
+    console.log(x)
+    console.log(y)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            1번 블록: <br>
+                            100<br>
+                            300<br>
+                            javascript<br><br>
+                            2번 블록: <br>
+                            user<br>
+                            rank<br>
+                            300<br>
+                            400
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample12" class="sample">
+                <h3>05-7. 배열 : 데이터 저장(여러개) : 표현방법8</h3>
+                <p>이 코드는 배열을 조합하고 확장하는 예시를 보여줍니다. 결과적으로 arr3 배열은 숫자 100, 300, "javascript", 500을 포함하게 됩니다.
+                    이러한 배열 조합과 확장은 여러 배열을 하나로 결합하거나 새로운 요소를 추가할 때 유용합니다.</p>
+                <pre><code>{
+    const arr1 = [100, 300, "javascript"];
+    const arr2 = [200, 400, "jQuery"];
+    const arr3 = [...arr1, 500];
+
+    console.log(...arr1)
+    console.log(...arr2)
+    console.log(...arr3)
+    console.log(...arr1, ...arr2)
+    console.log(...arr1, ...arr2, ...arr3)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            'javascript'<br>
+                            'jQuery'<br>
+                            'javascript' 500<br>
+                            'javascript' 200 400 'jQuery'<br>
+                            'javascript' 200 400 'jQuery' 100 300 'javascript' 500
                         </div>
                     </details>
                 </div>
@@ -214,7 +438,6 @@
             console.log(y)
             console.log(z)
         }
-
         // 04. 상수 : 데이터 저장 + 데이터 변경X
         {
             const x = 100;
@@ -230,7 +453,6 @@
             console.log(y)
             console.log(z)
         }
-
         // 05-1. 배열 : 데이터 저장(여러개) : 표현방법1 : 배열 선언
         {
             const arr = new Array();
@@ -323,26 +545,10 @@
             const arr3 = [...arr1, 500];
 
             console.log("12__________")
-            console.log('펼침 사용X')
-            console.log(arr1)
-            console.log('펼침 사용X')
-            console.log(arr2)
-            console.log('펼침 사용X')
-            console.log(arr3)
-            console.log('펼침 사용X')
-            console.log(arr1, arr2)
-            console.log('펼침 사용X')
-            console.log(arr1, arr2, arr3)
-
-            console.log('펼침 사용')
             console.log(...arr1)
-            console.log('펼침 사용')
             console.log(...arr2)
-            console.log('펼침 사용')
             console.log(...arr3)
-            console.log('펼침 사용')
             console.log(...arr1, ...arr2)
-            console.log('펼침 사용')
             console.log(...arr1, ...arr2, ...arr3)
         }
 
