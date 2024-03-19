@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 300;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Light.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 400;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 700;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Bold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 800;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-ExtraBold.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "nanumSquareNeo";
+    font-weight: 900;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot");
+    src: url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.eot?#iefix") format("embedded-opentype"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff2") format("woff2"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.woff") format("woff"),
+        url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.ttf") format("truetype");
+    font-display: swap;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+:root {
+    --fontN: "nanumSquareNeo";
+    --fontG: "GmarketSans";
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-bottom: 1px solid #dcdcdc;
+    h1 {
+        margin-bottom: 20px;
+        a {
+            font-family: var(--fontG);
+            font-size: 4vw;
+            color: #112d86;
+        }
+    }
+    nav {
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            li {
+                margin: 2px;
+                a {
+                    display: inline-block;
+                    font-family: var(--fontN);
+                    /* color: #112d86; */
+                    border: 1px solid #112d86;
+                    padding: 10px 20px;
+                }
+            }
+        }
+    }
+}
