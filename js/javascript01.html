@@ -25,10 +25,213 @@
     </header>
 
     <!-- main -->
-    <main id="main"></main>
+    <main id="main">
+        <div class="main__menu container">
+            <ul>
+                <li><a href="#">01. 변수 : 데이터 저장</a></li>
+                <li><a href="#">02. 변수 : 데이터 저장 + 변경</a></li>
+                <li><a href="#">03. 변수 : 데이터 저장 + 변경 + 추가</a></li>
+                <li><a href="#">04. 상수 : 데이터 저장 + 데이터 변경X</a></li>
+
+                <li><a href="#">05-1. 배열 : 데이터 저장(여러개) : 표현방법1</a></li>
+                <li><a href="#">05-2. 배열 : 데이터 저장(여러개) : 표현방법2</a></li>
+                <li><a href="#">05-3. 배열 : 데이터 저장(여러개) : 표현방법3</a></li>
+                <li><a href="#">05-4. 배열 : 데이터 저장(여러개) : 표현방법4</a></li>
+                <li><a href="#">05-5. 배열 : 데이터 저장(여러개) : 표현방법5</a></li>
+                <li><a href="#">05-6. 배열 : 데이터 저장(여러개) : 표현방법6</a></li>
+                <li><a href="#">05-7. 배열 : 데이터 저장(여러개) : 표현방법7</a></li>
+                <li><a href="#">05-7. 배열 : 데이터 저장(여러개) : 표현방법8</a></li>
+
+                <li><a href="#">06-1. 객체 : 데이터 저장(키&값) : 표현방법1</a></li>
+                <li><a href="#">06-2. 객체 : 데이터 저장(키&값) : 표현방법2</a></li>
+                <li><a href="#">06-3. 객체 : 데이터 저장(키&값) : 표현방법3</a></li>
+                <li><a href="#">06-4. 객체 : 데이터 저장(키&값) : 표현방법4</a></li>
+                <li><a href="#">06-5. 객체 : 데이터 저장(키&값) : 표현방법5</a></li>
+                <li><a href="#">06-6. 객체 : 데이터 저장(키&값) : 표현방법6</a></li>
+                <li><a href="#">06-7. 객체 : 데이터 저장(키&값) : 표현방법7</a></li>
+                <li><a href="#">06-8. 객체 : 데이터 저장(키&값) : 표현방법8</a></li>
+                <li><a href="#">06-9. 객체 : 데이터 저장(키&값) : 표현방법9</a></li>
+                <li><a href="#">06-10. 객체 : 데이터 저장(키&값) : 표현방법10</a></li>
+            </ul>
+        </div>
+        <div class="main__sample"></div>
+    </main>
 
     <!-- footer -->
     <footer id="footer"></footer>
+    <script>
+        // 01. 변수 : 데이터 저장
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+            console.log("1__________")
+            console.log(x)
+            console.log(y)
+            console.log(z)
+        }
+        // 02. 변수 : 데이터 저장 + 변경
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x = 300;
+            y = 400;
+            z = "jQuery";
+
+            console.log("2__________")
+            console.log(x)
+            console.log(y)
+            console.log(z)
+        }
+        // 03. 변수 : 데이터 저장 + 변경 + 추가      ++지역변수/전역변수
+        {
+            let x = 100;
+            let y = 200;
+            let z = "javascript";
+
+            x += 300;
+            y += 400;
+            z += "jQuery";
+
+            console.log("3__________")
+            console.log(x)
+            console.log(y)
+            console.log(z)
+        }
+
+        // 04. 상수 : 데이터 저장 + 데이터 변경X
+        {
+            const x = 100;
+            const y = 200;
+            const z = "javascript";
+            //  변경 시도 코드 주석 해제시 에러
+            // x += 300;
+            // y += 400;
+            // z += "jQuery";
+
+            console.log("4__________")
+            console.log(x)
+            console.log(y)
+            console.log(z)
+        }
+
+        // 05-1. 배열 : 데이터 저장(여러개) : 표현방법1 : 배열 선언
+        {
+            const arr = new Array();
+            arr[0] = 100;
+            arr[1] = 200;
+            arr[2] = "javascript";
+
+            console.log("5__________")
+            console.log(arr[0])
+            console.log(arr[1])
+            console.log(arr[2])
+        }
+        // 05-2. 배열 : 데이터 저장(여러개) : 표현방법2 : 배열 선언과 동시에 초깃값 설정
+        {
+            const arr = new Array(100, 200, "javascript");
+
+            console.log("6__________")
+            console.log(arr[0])
+            console.log(arr[1])
+            console.log(arr[2])
+        }
+        // 05-3. 배열 : 데이터 저장(여러개) : 표현방법3 : 리터럴 방식으로 배열을 선언
+        {
+            const arr = [];
+
+            arr[0] = 100;
+            arr[1] = 200;
+            arr[2] = "javascript";
+
+            console.log("7__________")
+            console.log(arr[0])
+            console.log(arr[1])
+            console.log(arr[2])
+        }
+        // 05-4. 배열 : 데이터 저장(여러개) : 표현방법4 : 리터럴 방식으로 배열선언과 동시에 초깃값 설정
+        {
+            const arr = [100, 200, "javascript"];
+
+            console.log("8__________")
+            console.log(arr[0])
+            console.log(arr[1])
+            console.log(arr[2])
+        }
+        // 05-5. 배열 : 데이터 저장(여러개) : 표현방법5 : push() 메서드를 이용한 배열 방법
+        {
+            const arr = [100, 200, "javascript"];
+
+            arr.push(400)
+            console.log("9__________")
+            console.log(arr[0])
+            console.log(arr[1])
+            console.log(arr[2])
+            console.log(arr[3])
+        }
+        // 05-6. 배열 : 데이터 저장(여러개) : 표현방법6 : 다차원 배열
+        {
+            const arr = [100, [200, 300, [400, 500, [600]]], ["javascript", "jQuery"]];
+
+            console.log("10__________")
+            console.log(arr[0])
+            console.log(arr[1][0])
+            console.log(arr[1][1])
+            console.log(arr[2][0])
+            console.log(arr[2][1])
+            console.log(arr[1][2][2][0])
+        }
+        // 05-7. 배열 : 데이터 저장(여러개) : 표현방법7 : 배열구조 분해 할당
+        {
+            const arr = [100, 300, "javascript"];
+            const [a, b, c] = arr;
+
+            console.log("11__________")
+            console.log(a)
+            console.log(b)
+            console.log(c)
+        }
+        {
+            const arr = ['user', 'rank', [300, 400]];
+            const [a, b, [x, y]] = arr;
+
+            console.log(a)
+            console.log(b)
+            console.log(x)
+            console.log(y)
+        }
+        // 05-8. 배열 : 데이터 저장(여러개) : 표현방법8 : 배열펼침연산자
+        {
+            const arr1 = [100, 300, "javascript"];
+            const arr2 = [200, 400, "jQuery"];
+            const arr3 = [...arr1, 500];
+
+            console.log("12__________")
+            console.log('펼침 사용X')
+            console.log(arr1)
+            console.log('펼침 사용X')
+            console.log(arr2)
+            console.log('펼침 사용X')
+            console.log(arr3)
+            console.log('펼침 사용X')
+            console.log(arr1, arr2)
+            console.log('펼침 사용X')
+            console.log(arr1, arr2, arr3)
+
+            console.log('펼침 사용')
+            console.log(...arr1)
+            console.log('펼침 사용')
+            console.log(...arr2)
+            console.log('펼침 사용')
+            console.log(...arr3)
+            console.log('펼침 사용')
+            console.log(...arr1, ...arr2)
+            console.log('펼침 사용')
+            console.log(...arr1, ...arr2, ...arr3)
+        }
+    </script>
 </body>
 
 </html>

@@ -110,6 +110,13 @@ a {
 li {
     list-style: none;
 }
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0px auto;
+}
+
 #header {
     display: flex;
     flex-direction: column;
@@ -144,6 +151,23 @@ li {
                     border: 1px solid #112d86;
                     padding: 10px 20px;
                     white-space: nowrap;
+                }
+            }
+        }
+    }
+}
+
+.main__menu {
+    padding: 40px 0px;
+    ul {
+        li {
+            a {
+                color: #112d86;
+                font-family: var(--fontN);
+                line-height: 1.6;
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-position: under;
                 }
             }
         }
