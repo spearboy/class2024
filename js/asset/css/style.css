@@ -113,16 +113,19 @@ li {
 #header {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 40px;
     border-bottom: 1px solid #dcdcdc;
     h1 {
         margin-bottom: 20px;
+        text-align: center;
         a {
             font-family: var(--fontG);
             font-size: 4vw;
             color: #112d86;
+            @media (max-width: 800px) {
+                font-size: 42px;
+            }
         }
     }
     nav {
@@ -131,6 +134,7 @@ li {
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            flex-wrap: wrap;
             li {
                 margin: 2px;
                 a {
