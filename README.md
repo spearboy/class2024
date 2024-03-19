@@ -1,6 +1,6 @@
 # 오늘의 수업
 [메인 페이지](https://spearboy.github.io/class2024/)   
-[메인 페이지](https://spearboy.github.io/class2024/javascript/index.html)   
+[메인 페이지](https://spearboy.github.io/class2024//js/index.html)   
 [정보처리기능사](https://license.tistory.com/)   
 
 # vscode 확장 프로그램
