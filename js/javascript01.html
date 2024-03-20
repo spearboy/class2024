@@ -43,16 +43,16 @@
                 <li><a href="#sample11">05-7. 배열 : 데이터 저장(여러개) : 표현방법7</a></li>
                 <li><a href="#sample12">05-7. 배열 : 데이터 저장(여러개) : 표현방법8</a></li>
 
-                <li><a href="#">06-1. 객체 : 데이터 저장(키&값) : 표현방법1</a></li>
-                <li><a href="#">06-2. 객체 : 데이터 저장(키&값) : 표현방법2</a></li>
-                <li><a href="#">06-3. 객체 : 데이터 저장(키&값) : 표현방법3</a></li>
-                <li><a href="#">06-4. 객체 : 데이터 저장(키&값) : 표현방법4</a></li>
-                <li><a href="#">06-5. 객체 : 데이터 저장(키&값) : 표현방법5</a></li>
-                <li><a href="#">06-6. 객체 : 데이터 저장(키&값) : 표현방법6</a></li>
-                <li><a href="#">06-7. 객체 : 데이터 저장(키&값) : 표현방법7</a></li>
-                <li><a href="#">06-8. 객체 : 데이터 저장(키&값) : 표현방법8</a></li>
-                <li><a href="#">06-9. 객체 : 데이터 저장(키&값) : 표현방법9</a></li>
-                <li><a href="#">06-10. 객체 : 데이터 저장(키&값) : 표현방법10</a></li>
+                <li><a href="#sample13">06-1. 객체 : 데이터 저장(키&값) : 표현방법1</a></li>
+                <li><a href="#sample14">06-2. 객체 : 데이터 저장(키&값) : 표현방법2</a></li>
+                <li><a href="#sample15">06-3. 객체 : 데이터 저장(키&값) : 표현방법3</a></li>
+                <li><a href="#sample16">06-4. 객체 : 데이터 저장(키&값) : 표현방법4</a></li>
+                <li><a href="#sample17">06-5. 객체 : 데이터 저장(키&값) : 표현방법5</a></li>
+                <li><a href="#sample18">06-6. 객체 : 데이터 저장(키&값) : 표현방법6</a></li>
+                <li><a href="#sample19">06-7. 객체 : 데이터 저장(키&값) : 표현방법7</a></li>
+                <li><a href="#sample20">06-8. 객체 : 데이터 저장(키&값) : 표현방법8</a></li>
+                <li><a href="#sample21">06-9. 객체 : 데이터 저장(키&값) : 표현방법9</a></li>
+                <li><a href="#sample22" aria-disabled="true">06-10. 객체 : 데이터 저장(키&값) : 표현방법10</a></li>
             </ul>
         </div>
         <div class="main__sample container">
@@ -389,6 +389,245 @@
                     </details>
                 </div>
             </div>
+            <div id="sample13" class="sample">
+                <h3>06-1. 객체 : 데이터 저장(키&값) : 표현방법1 : 객체 선언 후 배열 방식으로 데이터 입력</h3>
+                <p>객체를 생성하고 배열 방식으로 데이터를 입력합니다.</p>
+                <pre><code>{
+    const obj = new Object();
+
+    obj[0] = 100;
+    obj[1] = 200;
+    obj[2] = "javascript";
+    console.log(obj[0])
+    console.log(obj[1])
+    console.log(obj[2])
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            'javascript'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample14" class="sample">
+                <h3>06-2. 객체 : 데이터 저장(키&값) : 표현방법2 : 객체 선언 후 객체 방식으로 데이터 입력</h3>
+                <p>객체를 생성하고 객체 방식으로 데이터를 입력합니다.</p>
+                <pre><code>{
+    const obj = new Object();
+    
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+    console.log(obj.a)
+    console.log(obj.b)
+    console.log(obj.c)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            'javascript'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample15" class="sample">
+                <h3>06-3. 객체 : 데이터 저장(키&값) : 표현방법3 : 리터럴 방식으로 객체 선언</h3>
+                <p>리터럴 방식으로 객체를 생성하고 데이터를 입력합니다.</p>
+                <pre><code>{
+    const obj = {};
+
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+    console.log("15__________")
+    console.log(obj.a)
+    console.log(obj.b)
+    console.log(obj.c)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            'javascript'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample16" class="sample">
+                <h3>06-4. 객체 : 데이터 저장(키&값) : 표현방법4 : 리터럴 방식으로 객체 선언과 동시에 초깃값을 지정한다.</h3>
+                <p>객체를 리터럴 방식으로 생성하고 동시에 초깃값을 지정합니다.</p>
+                <pre><code>{
+    const obj = { a: 100, b: 200, c: "javascript" };
+
+    console.log(obj.a)
+    console.log(obj.b)
+    console.log(obj.c)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            'javascript'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample17" class="sample">
+                <h3>06-5. 객체 : 데이터 저장(키&값) : 표현방법5 : 배열안에 객체가 있는 방식</h3>
+                <p>배열 안에 객체가 있는 방식으로 데이터를 저장합니다.</p>
+                <pre><code>{
+    const obj = [{ a: 100, b: 200, c: "javascript" }, { d: 300, e: 400, f: "jQuery" }, { g: 500, h: 600, i: "Node" },];
+
+    console.log(obj[0].a)
+    console.log(obj[0].b)
+    console.log(obj[0].c)
+
+    console.log(obj[1].d)
+    console.log(obj[1].e)
+    console.log(obj[1].f)
+
+    console.log(obj[2].g)
+    console.log(obj[2].h)
+    console.log(obj[2].i)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            'javascript'<br><br>
+                            300<br>
+                            400<br>
+                            'jQuery'<br><br>
+                            500<br>
+                            600<br>
+                            'Node'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample18" class="sample">
+                <h3>06-6. 객체 : 데이터 저장(키&값) : 표현방법6 : 겍체안에 배열이 있는 방식</h3>
+                <p>객체 안에 배열이 있는 방식으로 데이터를 저장합니다.</p>
+                <pre><code>{
+    const obj = { a: [100, 200], b: [300, 400], c: ["javascript", "jQuery"] };
+
+    console.log(obj.a[0])
+    console.log(obj.a[1])
+    console.log(obj.b[0])
+    console.log(obj.b[1])
+    console.log(obj.c[0])
+    console.log(obj.c[1])
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            300<br>
+                            400<br>
+                            'javascript'<br>
+                            'jQuery'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample19" class="sample">
+                <h3>06-7. 객체 : 데이터 저장(키&값) : 표현방법7 : 객체 + 객체가 있는 방식</h3>
+                <p>객체 내에 객체가 있는 방식으로 데이터를 저장합니다.</p>
+                <pre><code>{
+    const obj = { a: 100, b: { x: 200, y: 300 }, c: "javascript" };
+
+    console.log(obj.a)
+    console.log(obj.b.x)
+    console.log(obj.b.y)
+    console.log(obj.c)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            300<br>
+                            400<br>
+                            'javascript'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample20" class="sample">
+                <h3>06-8. 객체 : 데이터 저장(키&값) : 표현방법8 : 객체 + 함수가 있는 방식</h3>
+                <p>객체 내에 함수가 있는 방식으로 데이터를 저장합니다.</p>
+                <pre><code>{
+    const obj = {
+        a: 100, b: 200, c: "javascript", d: function () {
+            console.log('js가 실행되었습니다.')
+        },
+        e: function () {
+            console.log(obj.c + "가 실행되었습니다.")
+        },
+        f: function () {
+            console.log(this.c + "가 실행되었습니다.")
+        }
+
+    };
+
+    console.log(obj.a)
+    console.log(obj.b)
+    console.log(obj.c)
+    obj.d()
+    obj.e()
+    obj.f()
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            'javascript'<br>
+                            js가 실행되었습니다.<br>
+                            javascript가 실행되었습니다.<br>
+                            javascript가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample21" class="sample">
+                <h3>06-9. 객체 : 데이터 저장(키&값) : 표현방법9 : 객체구조분해할당</h3>
+                <p>객체 구조 분해 할당을 사용하여 객체의 프로퍼티를 변수로 추출합니다.</p>
+                <pre><code>{
+    const obj = { a: 100, b: 200, c: "javascript" };
+    const { a, b, c } = obj
+    console.log(a)
+    console.log(b)
+    console.log(c)
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            100<br>
+                            200<br>
+                            'javascript'<br>
+                        </div>
+                    </details>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -453,6 +692,8 @@
             console.log(y)
             console.log(z)
         }
+
+
         // 05-1. 배열 : 데이터 저장(여러개) : 표현방법1 : 배열 선언
         {
             const arr = new Array();
@@ -550,6 +791,134 @@
             console.log(...arr3)
             console.log(...arr1, ...arr2)
             console.log(...arr1, ...arr2, ...arr3)
+        }
+
+
+        // 06-1. 객체 : 데이터 저장(키&값) : 표현방법1 : 객체 선언 후 배열 방식으로 데이터 입력
+        {
+            const obj = new Object();
+
+            obj[0] = 100;
+            obj[1] = 200;
+            obj[2] = "javascript";
+            console.log("13__________")
+            console.log(obj[0])
+            console.log(obj[1])
+            console.log(obj[2])
+        }
+        // 06-2. 객체 : 데이터 저장(키&값) : 표현방법2 : 객체 선언 후 객체 방식으로 데이터 입력
+        {
+            const obj = new Object();
+
+            obj.a = 100;
+            obj.b = 200;
+            obj.c = "javascript";
+            console.log("14__________")
+            console.log(obj.a)
+            console.log(obj.b)
+            console.log(obj.c)
+        }
+        // 06-3. 객체 : 데이터 저장(키&값) : 표현방법3 : 리터럴 방식으로 객체 선언
+        {
+            const obj = {};
+
+            obj.a = 100;
+            obj.b = 200;
+            obj.c = "javascript";
+            console.log("15__________")
+            console.log(obj.a)
+            console.log(obj.b)
+            console.log(obj.c)
+        }
+        // 06-4. 객체 : 데이터 저장(키&값) : 표현방법4 : 리터럴 방식으로 객체 선언과 동시에 초깃값을 지정한다.
+        {
+            const obj = { a: 100, b: 200, c: "javascript" };
+
+            console.log("16__________")
+            console.log(obj.a)
+            console.log(obj.b)
+            console.log(obj.c)
+        }
+        // 06-5. 객체 : 데이터 저장(키&값) : 표현방법5 : 배열안에 객체가 있는 방식
+        {
+            const obj = [{ a: 100, b: 200, c: "javascript" }, { d: 300, e: 400, f: "jQuery" }, { g: 500, h: 600, i: "Node" },];
+
+            console.log("17__________")
+            console.log(obj[0].a)
+            console.log(obj[0].b)
+            console.log(obj[0].c)
+
+            console.log(obj[1].d)
+            console.log(obj[1].e)
+            console.log(obj[1].f)
+
+            console.log(obj[2].g)
+            console.log(obj[2].h)
+            console.log(obj[2].i)
+        }
+        // 06-6. 객체 : 데이터 저장(키&값) : 표현방법6 : 겍체안에 배열이 있는 방식
+        {
+            const obj = { a: [100, 200], b: [300, 400], c: ["javascript", "jQuery"] };
+
+            console.log("18__________")
+            console.log(obj.a[0])
+            console.log(obj.a[1])
+            console.log(obj.b[0])
+            console.log(obj.b[1])
+            console.log(obj.c[0])
+            console.log(obj.c[1])
+        }
+        // 06-7. 객체 : 데이터 저장(키&값) : 표현방법7 : 객체 + 객체가 있는 방식
+        {
+            const obj = { a: 100, b: { x: 200, y: 300 }, c: "javascript" };
+
+            console.log("19__________")
+            console.log(obj.a)
+            console.log(obj.b.x)
+            console.log(obj.b.y)
+            console.log(obj.c)
+        }
+        // 06-8. 객체 : 데이터 저장(키&값) : 표현방법8 : 객체 + 함수가 있는 방식
+        {
+            const obj = {
+                a: 100, b: 200, c: "javascript", d: function () {
+                    console.log('js가 실행되었습니다.')
+                },
+                e: function () {
+                    console.log(obj.c + "가 실행되었습니다.")
+                },
+                f: function () {
+                    console.log(this.c + "가 실행되었습니다.")
+                }
+
+            };
+
+            console.log("20__________")
+            console.log(obj.a)
+            console.log(obj.b)
+            console.log(obj.c)
+            obj.d()
+            obj.e()
+            obj.f()
+        }
+        // 06-9. 객체 : 데이터 저장(키&값) : 표현방법9 : 객체구조분해할당
+        {
+            const obj = { a: 100, b: 200, c: "javascript" };
+            const { a, b, c } = obj
+            console.log("21__________")
+            console.log(a)
+            console.log(b)
+            console.log(c)
+        }
+        // 06-10. 객체 : 데이터 저장(키&값) : 표현방법10 : 객체펼침연산자
+        {
+            const obj1 = { a: 100, b: 200, c: "javascript" };
+            const obj2 = { ...obj1, d: "jQuery" };
+            const obj3 = { ...obj1, ...obj2 };
+            console.log("22__________")
+            console.log(obj1)
+            console.log(obj2)
+            console.log(obj3)
         }
 
     </script>

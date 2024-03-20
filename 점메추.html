@@ -46,14 +46,17 @@
     <script>
         $(window).ready(function () {
             let push_stack = 0;
-            let lunch_menu = ['햄버거', '짜장면', '떡볶이', '돈까스', '파스타', '짬뽕', '순대국밥', '쌀국수', '치킨', '타코', '초밥', '회덮밥', '라멘', '샌드위치', '토스트', '제육볶음', '도시락', '닭갈비'];
+            let lunch_menu = ['햄버거', '짜장면', '떡볶이', '돈까스', '파스타', '짬뽕', '순대국밥', '쌀국수', '치킨', '타코', '초밥', '덮밥', '라멘', '샌드위치', '토스트', '제육볶음', '도시락', '닭갈비'];
             $(document).on('click', '#roll_lunch', function () {
-                if (push_stack > 5) {
-                    $('.result_value').text('이제 눌러도 안나오니까 ' + lunch_menu[ranN] + '나 처먹어')
+
+                if (push_stack >= 5) {
+                    $('.result_value').text('이제 눌러도 안나오니까 알아서 처먹어')
+                } else {
+                    let ranN = Math.floor(Math.random() * 18)
+                    $('.result_value').text(lunch_menu[ranN])
+                    push_stack++
                 }
-                let ranN = Math.floor(Math.random() * 18)
-                $('.result_value').text(lunch_menu[ranN])
-                push_stack++
+                console.log(push_stack)
             })
         })
     </script>
