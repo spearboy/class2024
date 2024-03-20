@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+        integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <title>오늘 점심은 이거다!</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .content>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <p>오늘의 점심은 이걸 먹어라</p>
+            <p class="result_value"></p>
+            <button id="roll_lunch">돌리기</button>
+        </div>
+    </div>
+    <script>
+        $(window).ready(function () {
+            let push_stack = 0;
+            let lunch_menu = ['햄버거', '짜장면', '떡볶이', '돈까스', '파스타', '짬뽕', '순대국밥', '쌀국수', '치킨', '타코', '초밥', '회덮밥', '라멘', '샌드위치', '토스트', '제육볶음', '도시락', '닭갈비'];
+            $(document).on('click', '#roll_lunch', function () {
+                if (push_stack > 5) {
+                    $('.result_value').text('이제 눌러도 안나오니까 ' + lunch_menu[ranN] + '나 처먹어')
+                }
+                let ranN = Math.floor(Math.random() * 18)
+                $('.result_value').text(lunch_menu[ranN])
+                push_stack++
+            })
+        })
+    </script>
+</body>
+
+</html>
