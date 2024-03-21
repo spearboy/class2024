@@ -208,7 +208,7 @@ li {
         h3 {
             font-family: var(--fontG);
             font-size: 30px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             color: #112d86;
         }
 
@@ -247,6 +247,10 @@ li {
 
             p {
                 margin-bottom: 5px;
+
+                &:last-child {
+                    margin-bottom: 0px;
+                }
             }
         }
     }
@@ -257,4 +261,11 @@ li {
             border-bottom: 1px dashed #112d86;
         }
     }
+}
+
+#footer {
+    padding: 100px;
+    text-align: center;
+    font-family: var(--fontN);
+    font-size: 14px;
 }
