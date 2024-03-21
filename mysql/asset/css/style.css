@@ -69,7 +69,7 @@
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1000px;
   width: 100%;
   margin: 0px auto;
 }
@@ -169,7 +169,11 @@ li {
   font-family: var(--fontN);
   margin-bottom: 10px;
   line-height: 1.7;
-  color: #112d86;
+  color: var(--black300);
+}
+.main__sample .sample p.strong {
+  font-size: 20px;
+  color: var(--black00);
 }
 .main__sample .sample .result {
   -webkit-appearance: none;
@@ -183,4 +187,10 @@ li {
   cursor: pointer;
   border: 1px solid #112d86;
   border-radius: 10px;
+}
+@media (max-width: 800px) {
+  .main__sample .sample {
+    padding: 40px 10px;
+    border-bottom: 1px dashed #112d86;
+  }
 }/*# sourceMappingURL=style.css.map */

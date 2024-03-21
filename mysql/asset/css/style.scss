@@ -101,7 +101,7 @@
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1000px;
     width: 100%;
     margin: 0px auto;
 }
@@ -217,7 +217,12 @@ li {
             font-family: var(--fontN);
             margin-bottom: 10px;
             line-height: 1.7;
-            color: #112d86;
+            color: var(--black300);
+
+            &.strong {
+                font-size: 20px;
+                color: var(--black00);
+            }
         }
 
         .result {
@@ -228,6 +233,15 @@ li {
             cursor: pointer;
             border: 1px solid #112d86;
             border-radius: 10px;
+        }
+
+        .info {}
+    }
+
+    @media (max-width: 800px) {
+        .sample {
+            padding: 40px 10px;
+            border-bottom: 1px dashed #112d86;
         }
     }
 }
