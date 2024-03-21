@@ -229,6 +229,9 @@ li {
 .main__sample .sample .info p:last-child {
   margin-bottom: 0px;
 }
+.main__sample .sample .info p.info_inner_p {
+  font-size: 14px;
+}
 @media (max-width: 800px) {
   .main__sample .sample {
     padding: 40px 10px;

@@ -284,6 +284,10 @@ li {
                 &:last-child {
                     margin-bottom: 0px;
                 }
+
+                &.info_inner_p {
+                    font-size: 14px;
+                }
             }
         }
     }
