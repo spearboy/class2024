@@ -188,6 +188,18 @@ li {
   border: 1px solid #112d86;
   border-radius: 10px;
 }
+.main__sample .sample .info {
+  padding: 20px;
+  background-color: #f4f8fa;
+  border-left: 3px solid #35a6c9;
+}
+.main__sample .sample .info a {
+  color: #2b8fad;
+  text-decoration: underline;
+}
+.main__sample .sample .info p {
+  margin-bottom: 5px;
+}
 @media (max-width: 800px) {
   .main__sample .sample {
     padding: 40px 10px;

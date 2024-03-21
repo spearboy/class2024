@@ -235,7 +235,20 @@ li {
             border-radius: 10px;
         }
 
-        .info {}
+        .info {
+            padding: 20px;
+            background-color: #f4f8fa;
+            border-left: 3px solid #35a6c9;
+
+            a {
+                color: #2b8fad;
+                text-decoration: underline;
+            }
+
+            p {
+                margin-bottom: 5px;
+            }
+        }
     }
 
     @media (max-width: 800px) {
