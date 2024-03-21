@@ -1,7 +1,7 @@
 # 오늘의 수업
 [메인 페이지](https://spearboy.github.io/class2024/)   
 [자바스크립트 페이지](https://spearboy.github.io/class2024/js/index.html)   
-[정보처리기능사](https://license.tistory.com/)   
+[MySQL 페이지](https://spearboy.github.io/class2024/mysql/index.html)   
 
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
@@ -21,8 +21,9 @@ ES7 : 문법 정리
 # 벌칙
 자기소개(5분) --> 자기소개(10분) --> 노래 --> 춤 --> 수업 발표   
 
-## 색상조합기
-[제너레이터](https://huemint.com)
+## 사이트 
+[정보처리기능사](https://license.tistory.com/)   
+[컬러 제너레이터](https://huemint.com)
 
 
 
