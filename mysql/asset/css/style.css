@@ -139,6 +139,10 @@ li {
   padding: 10px 20px;
   white-space: nowrap;
 }
+#header nav ul li.active a {
+  background-color: #112d86;
+  color: #fff;
+}
 
 .main__menu {
   padding: 40px 40px;
@@ -164,6 +168,13 @@ li {
   margin-bottom: 20px;
   color: #112d86;
 }
+.main__sample .sample h4 {
+  font-family: var(--fontG);
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #112d86;
+}
 .main__sample .sample p {
   font-size: 16px;
   font-family: var(--fontN);
@@ -174,6 +185,19 @@ li {
 .main__sample .sample p.strong {
   font-size: 20px;
   color: var(--black00);
+}
+.main__sample .sample ul {
+  padding-left: 16px;
+}
+.main__sample .sample ul li {
+  color: var(--black200);
+  line-height: 1.8;
+  font-family: var(--fontN);
+  list-style: square;
+}
+.main__sample .sample i {
+  color: red;
+  font-style: normal;
 }
 .main__sample .sample .result {
   -webkit-appearance: none;
@@ -192,6 +216,7 @@ li {
   padding: 20px;
   background-color: #f4f8fa;
   border-left: 3px solid #35a6c9;
+  font-family: var(--fontN);
 }
 .main__sample .sample .info a {
   color: #2b8fad;
@@ -199,6 +224,7 @@ li {
 }
 .main__sample .sample .info p {
   margin-bottom: 5px;
+  font-family: var(--fontN);
 }
 .main__sample .sample .info p:last-child {
   margin-bottom: 0px;

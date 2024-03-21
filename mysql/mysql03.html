@@ -17,9 +17,10 @@
         </h1>
         <nav>
             <ul>
-                <li><a href="mysql01.html">MySQL 세팅</a></li>
-                <li><a href="mysql02.html">데이터베이스</a></li>
-                <li><a href="mysql03.html">테이블</a></li>
+                <li><a href="mysql01.html">MySQL</a></li>
+                <li><a href="mysql02.html">SQL 개념</a></li>
+                <li class="active"><a href="mysql03.html">데이터베이스</a></li>
+                <li><a href="mysql04.html">테이블</a></li>
             </ul>
         </nav>
     </header>
@@ -27,11 +28,71 @@
     <main id="main">
         <div class="main__sample container">
             <div id="sample01" class="sample">
-                <h3>MySQL</h3>
-                <p class="strong">MySQL은 오픈 소스 관계형 데이터베이스 관리 시스템 입니다.</p>
-                <p>MySQL은 다중 사용자, 다중 스레드 RDBMS로서, 데이터의 안정성과 보안성을 제공합니다. MySQL은 대부분의 운영 체제에서 작동하며, 웹
-                    애플리케이션 개발, 데이터 분석, 빅
-                    데이터, 클라우드 기반 애플리케이션 등에 많이 사용됩니다.</p>
+                <h3>데이터베이스 보기</h3>
+                <div class="info">
+                    <p>show databases;</p>
+                </div>
+                <pre><code class="language-sql">show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)</code></pre>
+            </div>
+            <div id="sample02" class="sample">
+                <h3>데이터베이스 만들기</h3>
+                <div class="info">
+                    <p>create database test;</p>
+                </div>
+                <pre><code class="language-sql">create database test;
+Query OK, 1 row affected (0.00 sec)</code></pre>
+                <div class="info">
+                    <p>show databases;</p>
+                </div>
+                <pre><code class="language-sql">show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| test               |
++--------------------+
+5 rows in set (0.00 sec)</code></pre>
+            </div>
+            <div id="sample03" class="sample">
+                <h3>데이터베이스 삭제</h3>
+                <div class="info">
+                    <p>drop database test;</p>
+                </div>
+                <pre><code class="language-sql">drop database test;
+Query OK, 1 row affected (0.01 sec)</code></pre>
+                <div class="info">
+                    <p>show databases;</p>
+                </div>
+                <pre><code class="language-sql">show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)</code></pre>
+            </div>
+            <div id="sample04" class="sample">
+                <h3>데이터베이스 사용하기</h3>
+                <div class="info">
+                    <p>use test;</p>
+                </div>
+                <pre><code class="language-sql">use test;
+Database changed</code></pre>
             </div>
         </div>
     </main>

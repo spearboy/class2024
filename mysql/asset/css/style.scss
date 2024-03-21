@@ -175,6 +175,13 @@ li {
                     padding: 10px 20px;
                     white-space: nowrap;
                 }
+
+                &.active {
+                    a {
+                        background-color: #112d86;
+                        color: #fff;
+                    }
+                }
             }
         }
     }
@@ -212,6 +219,14 @@ li {
             color: #112d86;
         }
 
+        h4 {
+            font-family: var(--fontG);
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #112d86;
+        }
+
         p {
             font-size: 16px;
             font-family: var(--fontN);
@@ -223,6 +238,22 @@ li {
                 font-size: 20px;
                 color: var(--black00);
             }
+        }
+
+        ul {
+            padding-left: 16px;
+
+            li {
+                color: var(--black200);
+                line-height: 1.8;
+                font-family: var(--fontN);
+                list-style: square;
+            }
+        }
+
+        i {
+            color: red;
+            font-style: normal;
         }
 
         .result {
@@ -239,6 +270,7 @@ li {
             padding: 20px;
             background-color: #f4f8fa;
             border-left: 3px solid #35a6c9;
+            font-family: var(--fontN);
 
             a {
                 color: #2b8fad;
@@ -247,6 +279,7 @@ li {
 
             p {
                 margin-bottom: 5px;
+                font-family: var(--fontN);
 
                 &:last-child {
                     margin-bottom: 0px;
