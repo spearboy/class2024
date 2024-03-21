@@ -71,6 +71,18 @@
 :root {
   --fontN: "nanumSquareNeo";
   --fontG: "GmarketSans";
+  --black: #000;
+  --black100: #111;
+  --black200: #444;
+  --black300: #666;
+  --black400: #bbb;
+  --black500: #eee;
+  --white: #fff;
+  --white100: #f1f1f1;
+  --white200: #e7e7e7;
+  --white300: #dddddd;
+  --white400: #d1d1d1;
+  --white500: #c7c7c7;
 }
 
 a {
@@ -80,12 +92,6 @@ a {
 
 li {
   list-style: none;
-}
-
-.container {
-  max-width: 1300px;
-  width: 100%;
-  margin: 0px auto;
 }
 
 #header {
@@ -170,8 +176,4 @@ li {
   cursor: pointer;
   border: 1px solid #112d86;
   border-radius: 10px;
-}
-
-#footer {
-  height: 400px;
 }/*# sourceMappingURL=style.css.map */
