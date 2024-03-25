@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // 01 함수 : 선언적함수
+        {
+            function test1() {
+                console.log('01 함수 : 선언적함수')
+            }
+            test1()
+        }
+        // 01 함수 : 익명함수
+        {
+            var test2 = function () {
+                console.log('01 함수 : 익명함수')
+            }
+            test2()
+        }
+        // 01 함수 : 매개변수 함수
+        {
+            function test3(val) {
+                console.log(val)
+            }
+            test3('01 함수 : 매개변수 함수')
+        }
+        // 01 함수 : 리턴값함수
+        {
+            function test4() {
+                return '01 함수 : 리턴값함수'
+            }
+            console.log(test4())
+        }
+        // 01 함수 : 매개변수 리턴값 함수
+        {
+            function test4(val) {
+                return val
+            }
+            console.log(test4('01 함수 : 매개변수 리턴값 함수'))
+        }
+    </script>
+</body>
+
+</html>

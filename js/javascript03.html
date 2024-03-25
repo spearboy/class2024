@@ -329,7 +329,21 @@ test()
             test = (str) => {
                 return str
             }
-            console.log(test('10th function is running'))
+            console.log(test('10th-1 function is running'))
+
+            // 매개변수 하나이면 괄호 생략 가능
+            var test1 = str => {
+                return str
+            }
+            console.log(test1('10th-2 function is running'))
+
+            // 리턴 생략
+            var test2 = str => str
+            console.log(test1('10th-3 function is running'))
+
+            // 선언적 함수(가독성X)
+            test3 = str => str
+            console.log(test1('10th-4 function is running'))
         }
     </script>
 </body>
