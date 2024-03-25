@@ -161,6 +161,18 @@ li {
                     padding: 10px 20px;
                     white-space: nowrap;
                 }
+
+                &.active {
+                    a {
+                        display: block;
+                        font-family: var(--fontN);
+                        color: #fff;
+                        border: 1px solid #112d86;
+                        background-color: #112d86;
+                        padding: 10px 20px;
+                        white-space: nowrap;
+                    }
+                }
             }
         }
     }

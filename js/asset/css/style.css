@@ -127,6 +127,15 @@ li {
   padding: 10px 20px;
   white-space: nowrap;
 }
+#header nav ul li.active a {
+  display: block;
+  font-family: var(--fontN);
+  color: #fff;
+  border: 1px solid #112d86;
+  background-color: #112d86;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
 
 .main__menu {
   padding: 40px 40px;
