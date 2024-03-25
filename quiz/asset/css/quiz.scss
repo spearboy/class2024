@@ -75,6 +75,10 @@ a {
     color: #000;
 }
 
+.none {
+    display: none;
+}
+
 body {
     width: 100%;
     height: 100vh;
@@ -136,6 +140,115 @@ body {
                 }
             }
         }
+    }
+}
+
+.quiz__wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .quiz {
+        max-width: 500px;
+        background-color: #fff;
+        padding: 40px 30px;
+        border-radius: 10px;
+
+        .quiz__header {
+            color: #696969;
+            margin-bottom: 20px;
+
+            .date {}
+
+            .type {}
+        }
+
+        .quiz__main {
+            margin-bottom: 20px;
+
+            .question {
+                margin-bottom: 10px;
+
+                em {
+                    font-size: 24px;
+                    font-style: normal;
+                    line-height: 1.4;
+                }
+
+                span {
+                    font-size: 24px;
+                    line-height: 1.4;
+                }
+            }
+
+            .input {
+                input {
+                    appearance: none;
+                    width: 100%;
+                    padding: 20px;
+                    outline: none;
+                    border: 1px solid #000;
+                    border-radius: 5px;
+                    font-size: 18px;
+                    color: #666;
+                    line-height: 1.5;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .answer {
+                border: 1px solid #000;
+                padding: 20px;
+                background-color: #e7e2ff;
+                border-radius: 5px;
+                font-size: 16px;
+                color: #666;
+                line-height: 1.5;
+                margin-bottom: 10px;
+
+                &::before {
+                    content: '🤦‍♂️ 정답 : ';
+                }
+            }
+
+            .desc {
+                border: 1px solid #000;
+                padding: 20px;
+                border-radius: 5px;
+                font-size: 16px;
+                color: #666;
+                line-height: 1.5;
+                margin-bottom: 10px;
+
+                &::before {
+                    content: '🤦‍♂️ 설명 : ';
+                }
+            }
+        }
+
+        .quiz__footer {
+            .confirm {
+                background-color: #e7e2ff;
+                color: #000;
+                width: 100%;
+                padding: 20px;
+                border: 0px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid transparent;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 1px dashed #412e91;
+                    color: #412e91;
+                }
+            }
+        }
+
     }
 }
 

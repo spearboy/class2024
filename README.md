@@ -3,6 +3,14 @@
 [자바스크립트 페이지](https://spearboy.github.io/class2024/js/index.html)   
 [MySQL 페이지](https://spearboy.github.io/class2024/mysql/index.html)   
 
+## 퀴즈게임
+[퀴즈게임](https://spearboy.github.io/class2024/quiz/index.html)   
+
+[퀴즈01](https://spearboy.github.io/class2024/quiz/quiz01.html)   
+-변수(const)
+-선택자(quertSelector)
+-메서드(innerText(), classList, addEventListener, if문)
+
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
 Material Icon : 아이콘 설정   

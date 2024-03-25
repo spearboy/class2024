@@ -24,10 +24,62 @@
             </ul>
         </nav>
     </header>
-    <main id="main"></main>
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input id="input" type="text" placeholder="정답을 입력해주세요">
+                    </div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer id="footer">
         <a href="mailto:tsagaanaa123@naver.com">tsagaanaa123@naver.com</a>
     </footer>
+    <script>
+        // jq 사용 지양
+        const infoDate = "2021년 1회";
+        const infoType = "정보처리기능사";
+        const infoNum = "01";
+        const infoQuestion = "CPU의 정보처리 속도 단위 중 초당 100만개의 연산을 수행한다는 의미의 단위는?";
+        const infoAnswer = "MIPS";
+        const infoDesc = "LIPS는 초당 1개, KIPS는 초당 1000개, MIPS는 초당 1000000의 연산을 수행하는것을 의미합니다.";
+
+        document.querySelector(".quiz__header .date").innerText = infoDate;
+        document.querySelector(".quiz__header .type").innerText = infoType;
+        document.querySelector(".quiz__main em").innerText = infoNum;
+        document.querySelector(".quiz__main span").innerText = infoQuestion;
+        document.querySelector(".quiz__main .answer").innerText = infoAnswer;
+        document.querySelector(".quiz__main .desc").innerText = infoDesc;
+
+        document.querySelector(".confirm").addEventListener("click", function () {
+            let value_check = document.getElementById('input').value;
+
+            if (value_check == infoAnswer) {
+                alert('정답!')
+            } else {
+                alert('오답!')
+            }
+
+            document.querySelector(".quiz__main .answer").classList.remove('none')
+            document.querySelector(".quiz__main .desc").classList.remove('none')
+        });
+    </script>
 </body>
 
 </html>
