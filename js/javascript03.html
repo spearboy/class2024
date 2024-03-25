@@ -29,14 +29,227 @@
     <main id="main">
         <div class="main__menu container">
             <ul>
-                <li><a href="#sample01">01. 변수 : 데이터 저장</a></li>
+                <li><a href="#sample01">01. 함수 : 선언적 함수</a></li>
+                <li><a href="#sample02">01. 함수 : 익명 함수</a></li>
+                <li><a href="#sample03">01. 함수 : 매개변수 함수</a></li>
+                <li><a href="#sample04">01. 함수 : 리턴값 함수</a></li>
+                <li><a href="#sample05">01. 함수 : 매개변수 + 리턴값 함수</a></li>
+
+                <li><a href="#sample06">02. 화살표 함수 : 선언적 함수</a></li>
+                <li><a href="#sample07">02. 화살표 함수 : 익명 함수</a></li>
+                <li><a href="#sample08">02. 화살표 함수 : 매개변수 함수</a></li>
+                <li><a href="#sample09">02. 화살표 함수 : 리턴값 함수</a></li>
+                <li><a href="#sample10">02. 화살표 함수 : 매개변수 + 리턴값 함수</a></li>
+
+                <li><a href="#sample01">03. 함수 유형 : 함수와 매개변수를 이용한 형태</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 함수와 번수를 이용한 형태</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 함수와 배열를 이용한 형태</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 함수와 객체를 이용한 형태</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 함수와 객체 및 배열를 이용한 형태</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 함수와 번수를 이용한 형태</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 객체 안에 함수를 이용한 형태</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 객체 생성자 함수</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 프로토타입 함수</a></li>
+                <li><a href="#sample01">03. 함수 유형 : 객체 리터럴 함수</a></li>
+
+                <li><a href="#sample01">04. 함수 : 즉시실행 함수</a></li>
+                <li><a href="#sample01">04. 함수 : 파라미터 함수</a></li>
+                <li><a href="#sample01">04. 함수 : 재귀 함수</a></li>
+                <li><a href="#sample01">04. 함수 : 콜백 함수</a></li>
+                <li><a href="#sample01">04. 함수 : 비동기방식 : 콜백 함수</a></li>
+                <li><a href="#sample01">04. 함수 : 비동기방식 : 프로미스 함수</a></li>
+                <li><a href="#sample01">04. 함수 : 비동기방식 : async/await</a></li>
+                <li><a href="#sample01">04. 함수 : 중첩 함수</a></li>
+                <li><a href="#sample01">04. 함수 : 클로저</a></li>
+
+                <li><a href="#sample01">05. 클래스 : 기본</a></li>
+                <li><a href="#sample01">05. 클래스 : 상속</a></li>
             </ul>
         </div>
         <div class="main__sample container">
             <div id="sample01" class="sample">
-                <h3>01. 변수 : 데이터 저장</h3>
-                <p>자바스크립트에서 변수는 값을 저장하고 참조하는데 사용합니다.</p>
-                <p>변수를 사용하면 데이터를 저장하고 나중에 해당 데이터를 재사용 할 수 있습니다.</p>
+                <h3>01. 함수 : 선언적 함수</h3>
+                <p>선언적 함수는 function 키워드를 사용하여 함수를 선언하고, 함수의 이름과 매개변수를 명시하여 코드 블록 내에서 원하는 동작을 수행하는 자바스크립트 함수입니다.</p>
+                <pre><code class="language-js">{
+    function test() {
+        console.log('1st function is running')
+    }
+    test()
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '1st function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample02" class="sample">
+                <h3>01. 함수 : 익명 함수</h3>
+                <p>익명 함수는 함수의 이름이 없는 함수로, 함수를 변수에 할당하거나 다른 함수의 매개변수로 전달할 때 사용되며, 일회성으로 사용될 때 특히 유용합니다.</p>
+                <pre><code class="language-js">{
+const test = function () {
+    console.log('2nd function is running')
+}
+test()
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '2nd function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample03" class="sample">
+                <h3>01. 함수 : 매개변수 함수</h3>
+                <p>매개변수 함수는 다른 함수의 매개변수로 전달되는 함수로, 함수 내에서 호출되거나 다른 함수로 반환될 수 있으며, 주로 콜백 함수로 사용됩니다. 이를 통해 함수의 동작을 다양하게
+                    조절할 수 있습니다.</p>
+                <pre><code class="language-js">{
+    function test(str) {
+        console.log(str)
+    }
+    test('3rd function is running')
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '3rd function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample04" class="sample">
+                <h3>01. 함수 : 매개변수 함수</h3>
+                <p>매개변수 함수는 다른 함수의 매개변수로 전달되는 함수로, 함수 내에서 호출되거나 다른 함수로 반환될 수 있으며, 주로 콜백 함수로 사용됩니다. 이를 통해 함수의 동작을 다양하게
+                    조절할 수 있습니다.</p>
+                <pre><code class="language-js">{
+    function test() {
+        return '4th function is running'
+    }
+    console.log(test())
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '4th function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample05" class="sample">
+                <h3>01. 함수 : 매개변수 + 리턴값 함수</h3>
+                <p>매개변수와 리턴값을 가지는 함수는 입력값(매개변수)을 받아들이고, 이를 처리하여 결과를 반환(리턴값)하는 함수로, 여러 곳에서 재사용되거나 다른 함수에 전달될 수 있습니다.</p>
+                <pre><code class="language-js">{
+    function test(str) {
+        return str
+    }
+    console.log(test('5th function is running'))
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '5th function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample06" class="sample">
+                <h3>02. 화살표 함수 : 선언적 함수</h3>
+                <p>화살표 함수는 function 키워드 대신 => 화살표를 사용하여 함수를 선언하는 축약형으로, 함수의 이름과 return 키워드를 생략하여 간결하게 함수를 정의하는 자바스크립트
+                    함수입니다.</p>
+                <pre><code class="language-js">{
+    test = () => {
+        console.log('6th function is running')
+    }
+    test()
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '6th function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample07" class="sample">
+                <h3>02. 화살표 함수 : 익명 함수</h3>
+                <p>화살표 함수는 function 키워드 대신 => 화살표를 사용하여 함수를 선언하는 익명 함수로, 일회성으로 사용되거나 다른 함수의 매개변수로 전달될 때 특히 유용합니다.</p>
+                <pre><code class="language-js">{
+    const test = () => {
+        console.log('7th function is running')
+    }
+    test()
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '7th function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample08" class="sample">
+                <h3>02. 화살표 함수 : 매개변수 함수</h3>
+                <p>화살표 함수는 매개변수를 받아들이고 => 화살표를 통해 함수의 구현을 정의하는 함수로, 주로 다른 함수의 매개변수로 전달되는 콜백 함수나 간단한 함수를 정의할 때 사용됩니다.</p>
+                <pre><code class="language-js">{
+    test = (str) => {
+        console.log(str)
+    }
+    test('8th function is running')
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '8th function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample09" class="sample">
+                <h3>02. 화살표 함수 : 리턴값 함수</h3>
+                <p>화살표 함수는 화살표 오른쪽에 반환하려는 값을 적어주면, 그 값이 함수의 반환값으로 설정되며, 함수 본문을 한 줄로 간결하게 작성할 수 있는 자바스크립트 함수입니다.</p>
+                <pre><code class="language-js">{
+    test = () => {
+        return '9th function is running'
+    }
+    console.log(test())
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '9th function is running'
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <div id="sample10" class="sample">
+                <h3>02. 화살표 함수 : 매개변수 + 리턴값 함수</h3>
+                <p>화살표 함수는 매개변수를 받아들이고, 화살표 오른쪽에 반환하려는 값을 적어주어 함수의 반환값을 설정하는 자바스크립트 함수입니다. 코드를 간결하게 작성할 수 있어 매우 유용합니다.
+                </p>
+                <pre><code class="language-js">{
+    test = (str) => {
+        return str
+    }
+    console.log(test('10th function is running'))
+}</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 확인하기</summary>
+                        <div>
+                            '10th function is running'
+                        </div>
+                    </details>
+                </div>
             </div>
         </div>
     </main>
@@ -47,6 +260,76 @@
     <script>
         window.onload = function () {
             hljs.highlightAll();
+        }
+        // 01. 함수 : 선언적 함수
+        {
+            function test() {
+                console.log('1st function is running')
+            }
+            test()
+        }
+        // 01. 함수 : 익명 함수
+        {
+            const test = function () {
+                console.log('2nd function is running')
+            }
+            test()
+        }
+        // 01. 함수 : 매개변수 함수
+        {
+            function test(str) {
+                console.log(str)
+            }
+            test('3rd function is running')
+        }
+        // 01. 함수 : 리턴값 함수
+        {
+            function test() {
+                return '4th function is running'
+            }
+            console.log(test())
+        }
+        // 01. 함수 : 매개변수 + 리턴값 함수
+        {
+            function test(str) {
+                return str
+            }
+            console.log(test('5th function is running'))
+        }
+        // 02. 화살표 함수 : 선언적 함수
+        {
+            test = () => {
+                console.log('6th function is running')
+            }
+            test()
+        }
+        // 02. 화살표 함수 : 익명 함수
+        {
+            const test = () => {
+                console.log('7th function is running')
+            }
+            test()
+        }
+        // 02. 화살표 함수 : 매개변수 함수
+        {
+            test = (str) => {
+                console.log(str)
+            }
+            test('8th function is running')
+        }
+        // 02. 화살표 함수 : 리턴값 함수
+        {
+            test = () => {
+                return '9th function is running'
+            }
+            console.log(test())
+        }
+        // 02. 화살표 함수 : 매개변수 + 리턴값 함수
+        {
+            test = (str) => {
+                return str
+            }
+            console.log(test('10th function is running'))
         }
     </script>
 </body>
