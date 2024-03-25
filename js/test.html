@@ -15,40 +15,75 @@
 
 <body>
     <script>
-        // 01 함수 : 선언적함수
+        // 01. 함수 : 선언적 함수
         {
-            function test1() {
-                console.log('01 함수 : 선언적함수')
+            function test() {
+                console.log('1');
             }
-            test1()
+            test()
         }
-        // 01 함수 : 익명함수
+        // 01. 함수 : 익명 함수
         {
-            var test2 = function () {
-                console.log('01 함수 : 익명함수')
+            let test = function () {
+                console.log('2');
             }
-            test2()
+            test()
         }
-        // 01 함수 : 매개변수 함수
+        // 01. 함수 : 매개변수 함수
         {
-            function test3(val) {
-                console.log(val)
+            function test(val) {
+                console.log(val);
             }
-            test3('01 함수 : 매개변수 함수')
+            test('3')
         }
-        // 01 함수 : 리턴값함수
+        // 01. 함수 : 리턴값 함수
         {
-            function test4() {
-                return '01 함수 : 리턴값함수'
+            function test() {
+                return '4'
             }
-            console.log(test4())
+            console.log(test());
         }
-        // 01 함수 : 매개변수 리턴값 함수
+        // 01. 함수 : 매개변수 + 리턴값 함수
         {
-            function test4(val) {
-                return val
+            function test($제목) {
+                return $제목
             }
-            console.log(test4('01 함수 : 매개변수 리턴값 함수'))
+            console.log(test('제목은 이거에요'));
+        }
+        // 02. 화살표 함수 : 선언적 함수
+        {
+            test = () => {
+                console.log('6');
+            }
+            test()
+        }
+        // 02. 화살표 함수 : 익명 함수
+        {
+            let test = () => {
+                console.log('7');
+            }
+            test()
+        }
+        // 02. 화살표 함수 : 매개변수 함수
+        {
+            test = (val) => {
+                console.log(val);
+            }
+            test('8')
+        }
+        // 02. 화살표 함수 : 리턴값 함수
+        {
+            test = () => {
+                return '9';
+            }
+            console.log(test())
+        }
+        // 02. 화살표 함수 : 매개변수 + 리턴값 함수
+        {
+            test = (val) => {
+                return val;
+            }
+            console.log(test('10'))
         }
     </script>
 </body>
