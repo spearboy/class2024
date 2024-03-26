@@ -122,10 +122,11 @@ body::after {
   flex-wrap: wrap;
 }
 .quiz__wrap .quiz {
-  max-width: 500px;
+  width: 500px;
   background-color: #fff;
   padding: 40px 30px;
   border-radius: 10px;
+  margin: 10px;
 }
 .quiz__wrap .quiz .quiz__header {
   color: #696969;

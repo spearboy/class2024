@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz01</title>
+    <title>quiz02</title>
     <link rel="stylesheet" href="./asset/css/quiz.css">
 </head>
 
@@ -24,10 +24,179 @@
             </ul>
         </nav>
     </header>
-    <main id="main"></main>
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input id="input" type="text" placeholder="정답을 입력해주세요">
+                    </div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input id="input" type="text" placeholder="정답을 입력해주세요">
+                    </div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input id="input" type="text" placeholder="정답을 입력해주세요">
+                    </div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input id="input" type="text" placeholder="정답을 입력해주세요">
+                    </div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+            <div class="quiz">
+                <div class="quiz__header">
+                    <span class="date"></span>
+                    <span class="type"></span>
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                        <em></em>.
+                        <span></span>
+                    </div>
+                    <div class="input">
+                        <input id="input" type="text" placeholder="정답을 입력해주세요">
+                    </div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer id="footer">
         <a href="mailto:tsagaanaa123@naver.com">tsagaanaa123@naver.com</a>
     </footer>
+    <script>
+        const quizInfo = [
+            {
+                infoDate: '2021년 1회',
+                infoType: '정보처리 기능사',
+                infoNum: '01',
+                infoQuestion: '입출력 조작의 시간과 중앙처리장치의 처리시간과의 불균형을 보완하는 것은?',
+                infoAnswer: '채널장치',
+                infoDesc: '채중입 : 채널은 중앙처리장치와 입출력장치 사이에 존재하며 서로의 속도 차이를 보완 합니다.',
+            },
+            {
+                infoDate: '2021년 1회',
+                infoType: '정보처리 기능사',
+                infoNum: '02',
+                infoQuestion: '명령어 형식(instruction format)에서 첫 번째 바이트에 기억되는 것은?',
+                infoAnswer: 'opcode',
+                infoDesc: '명령어의 구성명령어 코드부 + 주소부 (한글),<br> OP-code + Operand (영문)',
+            },
+            {
+                infoDate: '2021년 1회',
+                infoType: '정보처리 기능사',
+                infoNum: '03',
+                infoQuestion: '반가산기(Half-Adder)의 논리회로도에서 자리올림이 발생하는 회로는?',
+                infoAnswer: 'AND',
+                infoDesc: '반가산기 구성: S = A XOR B, C = A AND B, <br>S : SUM(합), C : Carry(자리올림)',
+            },
+            {
+                infoDate: '2021년 1회',
+                infoType: '정보처리 기능사',
+                infoNum: '04',
+                infoQuestion: '기억 장치 고유의 번지로서 0, 1, 2, 3, ...과 같이 16진수로 약속하여 순서대로 정해 놓은 번지는?',
+                infoAnswer: '절대번지',
+                infoDesc: '절대번지는 처음부터 순서대로 0, 1, 2, 3 과같이 주소를 부여 하는 방식입니다.',
+            },
+            {
+                infoDate: '2021년 1회',
+                infoType: '정보처리 기능사',
+                infoNum: '05',
+                infoQuestion: '2진수의 1011의 1의 보수는?',
+                infoAnswer: '0100',
+                infoDesc: '1의 보수는 1은 0으로, 0은 1로 바꾸어 주면 답이 됩니다.',
+            }
+        ];
+
+        const quizWrap = document.querySelector(".quiz__wrap");
+        const quizDate = quizWrap.querySelectorAll(".quiz__header .date");
+        const quizType = quizWrap.querySelectorAll(".quiz__header .type");
+        const quizNum = quizWrap.querySelectorAll(".question em");
+        const quizQuestion = quizWrap.querySelectorAll(".question span");
+        const quizInput = quizWrap.querySelectorAll(".input input");
+        const quizAnswer = quizWrap.querySelectorAll(".answer");
+        const quizDesc = quizWrap.querySelectorAll(".desc");
+        const quizConfirm = quizWrap.querySelectorAll(".confirm");
+
+        function init() {
+            for (let i = 0; i < quizInfo.length; i++) {
+                quizDate[i].innerHTML = quizInfo[i].infoDate
+                quizType[i].innerHTML = quizInfo[i].infoType
+                quizNum[i].innerHTML = quizInfo[i].infoNum
+                quizQuestion[i].innerHTML = quizInfo[i].infoQuestion
+                quizAnswer[i].innerHTML = quizInfo[i].infoAnswer
+                quizDesc[i].innerHTML = quizInfo[i].infoDesc
+            }
+        }
+        init()
+    </script>
 </body>
 
 </html>
