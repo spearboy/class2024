@@ -39,8 +39,8 @@
                     <div class="input">
                         <input id="input" type="text" placeholder="정답을 입력해주세요">
                     </div>
-                    <div class="answer none"></div>
-                    <div class="desc none"></div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답 확인하기</button>
@@ -59,8 +59,8 @@
                     <div class="input">
                         <input id="input" type="text" placeholder="정답을 입력해주세요">
                     </div>
-                    <div class="answer none"></div>
-                    <div class="desc none"></div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답 확인하기</button>
@@ -79,8 +79,8 @@
                     <div class="input">
                         <input id="input" type="text" placeholder="정답을 입력해주세요">
                     </div>
-                    <div class="answer none"></div>
-                    <div class="desc none"></div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답 확인하기</button>
@@ -99,8 +99,8 @@
                     <div class="input">
                         <input id="input" type="text" placeholder="정답을 입력해주세요">
                     </div>
-                    <div class="answer none"></div>
-                    <div class="desc none"></div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답 확인하기</button>
@@ -119,8 +119,8 @@
                     <div class="input">
                         <input id="input" type="text" placeholder="정답을 입력해주세요">
                     </div>
-                    <div class="answer none"></div>
-                    <div class="desc none"></div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답 확인하기</button>
@@ -186,16 +186,42 @@
         const quizConfirm = quizWrap.querySelectorAll(".confirm");
 
         function init() {
-            for (let i = 0; i < quizInfo.length; i++) {
-                quizDate[i].innerHTML = quizInfo[i].infoDate
-                quizType[i].innerHTML = quizInfo[i].infoType
-                quizNum[i].innerHTML = quizInfo[i].infoNum
-                quizQuestion[i].innerHTML = quizInfo[i].infoQuestion
-                quizAnswer[i].innerHTML = quizInfo[i].infoAnswer
-                quizDesc[i].innerHTML = quizInfo[i].infoDesc
-            }
+            // for (let i = 0; i < quizInfo.length; i++) {
+            //     quizDate[i].innerHTML = quizInfo[i].infoDate
+            //     quizType[i].innerHTML = quizInfo[i].infoType
+            //     quizNum[i].innerHTML = quizInfo[i].infoNum
+            //     quizQuestion[i].innerHTML = quizInfo[i].infoQuestion
+            //     quizAnswer[i].innerHTML = quizInfo[i].infoAnswer
+            //     quizDesc[i].innerHTML = quizInfo[i].infoDesc
+            // }
+            quizInfo.forEach(function (e, i) {
+                quizDate[i].innerHTML = quizInfo[i].infoDate;
+                quizType[i].innerHTML = quizInfo[i].infoType;
+                quizNum[i].innerHTML = quizInfo[i].infoNum;
+                quizQuestion[i].innerHTML = quizInfo[i].infoQuestion;
+                quizAnswer[i].innerHTML = quizInfo[i].infoAnswer;
+                quizDesc[i].innerHTML = quizInfo[i].infoDesc;
+
+                quizAnswer[i].classList.add('none');
+                quizDesc[i].classList.add('none');
+            });
         }
         init()
+
+
+        quizConfirm.forEach(function (btn, num) {
+            btn.addEventListener('click', function () {
+                if (quizInfo[num].infoAnswer == quizInput[num].value) {
+                    alert(quizInput[num].value + ' : 정답입니다.')
+                    quizAnswer[num].classList.remove('none')
+                    quizDesc[num].classList.remove('none')
+                } else {
+                    alert(quizInput[num].value + ' : 오답입니다.')
+                }
+            })
+        })
+        // 정답 해설 숨기기
+
     </script>
 </body>
 
