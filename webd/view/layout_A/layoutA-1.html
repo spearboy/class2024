@@ -13,23 +13,35 @@
         }
 
         #wrap {
+            width: 1200px;
+            height: 700px;
             margin: 0px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         #header {
             width: 1200px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        #header .logo {
+            width: 20%;
             height: 100px;
-            background-color: #ccc;
+            background-color: #ffecec;
+        }
+
+        #header .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #ffe0e0;
         }
 
         #slider {
             width: 1200px;
             height: 300px;
-            background-color: #ddd;
+            background-color: #ffd5d5;
         }
 
         #contents {
@@ -37,6 +49,14 @@
             height: 200px;
             background-color: #eee;
         }
+
+        #contents .content1 {
+            width: 33%;
+        }
+
+        #contents .content2 {}
+
+        #contents .content3 {}
 
         #footer {
             width: 1200px;
@@ -49,11 +69,20 @@
 <body>
     <div id="wrap">
         <div id="header">
+            <div class="logo"></div>
+            <nav class="nav"></nav>
         </div>
         <div id="slider"></div>
         <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <div class="logo"></div>
+            <div class="copy"></div>
+            <div class="sns"></div>
+        </div>
     </div>
 </body>
 
