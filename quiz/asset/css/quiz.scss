@@ -183,7 +183,44 @@ body {
                     line-height: 1.4;
                 }
             }
-
+            .choises {
+                margin-bottom: 20px;
+                label {
+                    display: block;
+                    input {
+                        appearance: none;
+                        width: 0px;
+                        height: 0px;
+                        overflow: hidden;
+                        &:checked+span::before {
+                            box-shadow: inset 0 0 0 9px #412e91;
+                        }
+                    }
+                    span {
+                        border: 1px solid #eee;
+                        padding: 17px;
+                        display: flex;
+                        margin-bottom: 10px;
+                        border-radius: 3px;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        cursor: pointer;
+                        &:hover {
+                            border-color: #412e91;
+                            color: #412e91;
+                            box-shadow: 1px 1px 5px #422e9160;
+                        }
+                        &::before {
+                            content: '';
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            box-shadow: inset 0 0 0 4px #412e91;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
             .input {
                 input {
                     appearance: none;

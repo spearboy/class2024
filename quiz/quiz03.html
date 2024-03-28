@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quiz01</title>
+    <title>quiz03</title>
     <link rel="stylesheet" href="./asset/css/quiz.css">
 </head>
 
@@ -24,10 +24,74 @@
             </ul>
         </nav>
     </header>
-    <main id="main"></main>
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">
+                </div>
+                <div class="quiz__main">
+                    <div class="question">
+                    </div>
+                    <div class="choises">
+                        <label for="choises1" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises1" value="1">
+                            <span></span>
+                        </label>
+                        <label for="choises2" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises2" value="2">
+                            <span></span>
+                        </label>
+                        <label for="choises3" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises3" value="3">
+                            <span></span>
+                        </label>
+                        <label for="choises4" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises4" value="4">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="answer"></div>
+                    <div class="desc"></div>
+                </div>
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer id="footer">
         <a href="mailto:tsagaanaa123@naver.com">tsagaanaa123@naver.com</a>
     </footer>
+    <script>
+        const quizWrap = document.querySelector(".quiz__wrap"); 
+        const quizHeader = quizWrap.querySelector(".quiz__header");
+        const quizQuestion = quizWrap.querySelector(".question");
+        const quizAnswer = quizWrap.querySelector(".answer");
+        const quizDesc = quizWrap.querySelector(".desc");
+        const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");
+        const quizSelect = quizWrap.querySelectorAll(".quiz__choice input");
+        const quizConfirm = quizWrap.querySelector(".confirm");
+
+        const quizInfo = {
+            date: "2021년 1회",
+            type: "웹디자인기능사",
+            num: "01",
+            question: "다음 중 디자인의 기본 요소들로 옳은 것은?",
+            choices: ["선, 색채, 공간, 수량", "점, 선, 면, 질감", "시간, 수량, 구조, 공간", "면, 구조, 공간, 수량"],
+            answer: "2",
+            desc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다."
+        }
+        // for(let i = 0; i < quizInfo.choices.length; i++){
+        //     console.log(quizInfo.choices[i])
+        // }
+        quizInfo.choices.forEach(element => {
+            console.log(element)
+        });
+
+        quizHeader.innerHTML = quizInfo.date + " " + quizInfo.type;
+        quizQuestion.innerHTML ='<span>'+ quizInfo.num + ". " + quizInfo.question+'</span>';
+
+    </script>
 </body>
 
 </html>

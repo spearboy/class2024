@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-4</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .text_align {
+            text-align: center;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            background-color: #a1a1a1;
+        }
+        #header .header-container {
+            width: 1200px;
+            height: 100px;
+            background-color: #e7bcbc;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        #header .header-container .logo {
+            width: 300px;
+            height: 100px;
+            background-color: #ad2525;
+        }
+        #header .header-container .nav {
+            width: calc(100% - 300px);
+            height: 100px;
+            background-color: #365738;
+        }
+        #slider {
+            width: 100%;
+            background-color: #b1b1b1;
+        }
+        #slider .slider-container {
+            width: 1200px;
+            height: 300px;
+            background-color: #523131;
+            margin: 0px auto;
+        }
+        #contents {
+            width: 100%;
+            background-color: #c1c1c1;
+        }
+        #contents .contents-container {
+            width: 1200px;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #contents .contents-container .content {
+            width: 400px;
+            height: 200px;
+            background-color: #219783;
+        }
+        #contents .contents-container .content:nth-child(2) {
+            width: 400px;
+            height: 200px;
+            background-color: #37684f;
+        }
+        #contents .contents-container .content:last-child {
+            width: 400px;
+            height: 200px;
+            background-color: #a1ac42;
+        }
+        #footer {
+            width: 100%;
+            background-color: #d1d1d1;
+        }
+        #footer .footer-container {
+            width: 1200px;
+            height: 100px;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        #footer .footer-container .logo {
+            width: 300px;
+            height: 100px;
+            background-color: #7c8f81;
+        }
+        #footer .footer-container .footer-wrapper {
+            width: calc(100% - 300px);
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        #footer .footer-container .footer-wrapper div {
+            width: 100%;
+            height: 50px;
+            background-color: #d66262;
+        }
+        #footer .footer-container .footer-wrapper div:last-child {
+            background-color: #c00909;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header-container">
+                <div class="logo text_align">로고</div>
+                <nav class="nav text_align">메뉴</nav>
+            </div>
+        </header>
+        <article id="slider">
+            <div class="slider-container text_align">이미지 슬라이드</div>
+        </article>
+        <main id="contents">
+            <div class="contents-container">
+                <section class="content text_align">공지사항/갤러리</section>
+                <section class="content text_align">배너</section>
+                <section class="content text_align">바로가기</section>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer-container">
+                <div class="footer-wrapper">
+                    <div class="text_align">SNS</div>
+                    <div class="text_align">페일리 사이트</div>
+                </div>
+                <div class="logo text_align">하단메뉴</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -74,6 +74,21 @@
             <iframe src="index.html" frameborder="0"></iframe>
         </main>
     </div>
+    <script>
+        document.querySelectorAll('nav ul li').forEach((li)=>{
+            li.addEventListener('click', (e) => {
+                e.preventDefault()
+                let href_value = li.querySelector('a').getAttribute("href");
+                
+                document.querySelector('#content iframe').setAttribute('src',href_value);
+                
+                document.querySelectorAll('nav ul li').forEach((el)=>{
+                    el.classList.remove('active')
+                })
+                li.classList.add('active')
+            })
+        });
+    </script>
 </body>
 
 </html>
