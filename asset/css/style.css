@@ -101,6 +101,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 .main__icons .icon img {
   width: 50px;

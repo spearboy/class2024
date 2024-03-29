@@ -71,18 +71,18 @@
             </nav>
         </aside>
         <main id="content">
-            <iframe src="index.html" frameborder="0"></iframe>
+            <iframe src="./view/layout_A/layoutA-1.html" frameborder="0"></iframe>
         </main>
     </div>
     <script>
-        document.querySelectorAll('nav ul li').forEach((li)=>{
+        document.querySelectorAll('nav ul li').forEach((li) => {
             li.addEventListener('click', (e) => {
                 e.preventDefault()
                 let href_value = li.querySelector('a').getAttribute("href");
-                
-                document.querySelector('#content iframe').setAttribute('src',href_value);
-                
-                document.querySelectorAll('nav ul li').forEach((el)=>{
+
+                document.querySelector('#content iframe').setAttribute('src', href_value);
+
+                document.querySelectorAll('nav ul li').forEach((el) => {
                     el.classList.remove('active')
                 })
                 li.classList.add('active')
