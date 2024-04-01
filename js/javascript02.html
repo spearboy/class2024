@@ -782,46 +782,46 @@
                 c: "javascript"
             }
             console.log(Object.keys(obj));
+            console.log(Object.keys(obj)[0]);
+            console.log(Object.keys(obj)[1]);
+            console.log(Object.keys(obj)[2]);
         }
         // 15. 객체 : 데이터 불러오기 : Object.values()
         {
             console.log('15_________')
-            {
-                const obj = {
-                    a: 100,
-                    b: 200,
-                    c: "javascript"
-                }
-                console.log(Object.values(obj));
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
             }
+            console.log(Object.values(obj));
+            console.log(Object.values(obj)[0]);
+            console.log(Object.values(obj)[1]);
+            console.log(Object.values(obj)[2]);
         }
         // 16. 객체 : 데이터 불러오기 : Object.entries()
         {
             console.log('16_________')
-            {
-                const obj = {
-                    a: 100,
-                    b: 200,
-                    c: "javascript"
-                }
-                console.log(Object.entries(obj));
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
             }
+            console.log(Object.entries(obj));
         }
         // 17. 객체 : 데이터 불러오기 : Object.assign()
         {
             console.log('17_________')
-            {
-                const obj1 = {
-                    a: 100,
-                    b: 200,
-                }
-                const obj2 = {
-                    c: 300,
-                    d: 400,
-                }
-                const obj3 = Object.assign(obj1, obj2);
-                console.log(obj3);
+            const obj1 = {
+                a: 100,
+                b: 200,
             }
+            const obj2 = {
+                c: 300,
+                d: 400,
+            }
+            const obj3 = Object.assign(obj1, obj2);
+            console.log(obj3);
         }
         // 18. 객체 : 데이터 불러오기 : hasOwnProperty
         {
@@ -847,26 +847,108 @@
                 a: 100,
                 b: 200,
                 c: "javascript"
-            }
+            };
             for (let el in obj) {
-                console.log('')
+                console.log(el)
+                console.log(obj[el])
+                console.log(el + ":" + obj[el])
             }
         }
-        // 20. 객체 : 데이터 불러오기 : 객체 펼침연산자
+        // 20. 객체 : 데이터 불러오기 : 객체 구조 분해 할당
         {
+            console.log('20_________1')
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+            const { a, b, c } = obj;
 
+            console.log(a);
+            console.log(b);
+            console.log(c);
         }
-        // 21. 객체 : 데이터 불러오기 : 객체 구조 분해 할당
         {
+            // 기본 값 할당 
+            console.log('20_________2')
+            const obj = {
+                a: 100,
+                b: 200
+            };
+            const { a, b, c = "javascript" } = obj;
 
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        {
+            // 새로운 이름으로 변경 
+            console.log('20_________3')
+            const obj = {
+                a: 100,
+                b: 200,
+                c: "javascript"
+            };
+            const { a: x, b: y, c: z } = obj;
+
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+        {
+            // 특정 키 무시
+            console.log('20_________4')
+            const obj = {
+                a: 100,
+                b: { c: 200, d: "javascript" }
+            };
+            const { a, b: { c, d } } = obj;
+
+            console.log(a)
+            console.log(c)
+            console.log(d)
+        }
+        // 21. 객체 : 데이터 불러오기 : 객체 펼침연산자
+        {
+            console.log('21_________')
+            const obj1 = { a: 100, b: 200 };
+            const obj2 = { c: 300, d: 400 };
+            const merge1 = { ...obj1, ...obj2 };
+            const merge2 = { ...obj1, x: "javascript", ...obj2, y: 'jquery' };
+            console.log(obj1)
+            console.log(merge1)
+            console.log(merge2)
         }
         // 22. 서버 데이터 불러오기 : XMLHttpRequest
         {
+            console.log('22_________')
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
 
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var responseData = xhr.responseText;
+                    var jsonData = JSON.parse(responseData);
+
+                    console.log(jsonData);
+                } else if (xhr.readyState === 4) {
+                    console.error("데이터 불러오기 오류: " + xhr.status);
+                }
+            };
+
+            xhr.send();
         }
         // 23. 서버 데이터 불러오기 : fetch API
         {
+            console.log('23_________')
 
+            fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json").then(response => {
+                return response.json();
+            }).then(data => {
+                console.log(data)
+            }).catch(error => {
+                console.log('데이터 불러오기 오류', error)
+            })
         }
     </script>
     <script src="../js/asset/js/plugin/highlight.min.js"></script>
