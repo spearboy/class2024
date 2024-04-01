@@ -638,6 +638,7 @@
 
         // 10. 배열 : 데이터 불러오기 : filter()
         {
+            console.log('10_________')
             const num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
             num.filter(function (Element) {
                 console.log(Element);
@@ -664,18 +665,107 @@
         }
         // 11. 배열 : 데이터 불러오기 : 배열 펼침연산자
         {
+            console.log('11_________')
+            // 기본 변수 할당
+            const arr = [100, 200, "javascript"];
+            const [a, b, c] = arr;
+
+            console.log(a)
+            console.log(b)
+            console.log(c)
         }
-        // 12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당
         {
+            console.log('11_________2')
+            // 선언에서 분리 할당
+            const [a, b, c] = [100, 200, "javascript"];
+
+            console.log(a)
+            console.log(b)
+            console.log(c)
+        }
+        {
+            console.log('11_________3')
+            // 기본값 설정
+            const [a, b, c = "javascript"] = [100, 200];
+
+            console.log(a)
+            console.log(b)
+            console.log(c)
+        }
+        {
+            console.log('11_________4')
+            // 배열 일부 요소 무시
+            const [a, , c] = [100, 200, "javascript"];
+
+            console.log(a)
+            console.log(c)
+        }
+        {
+            console.log('11_________5')
+            // 나머지 값 할당
+            const [a, b, ...rest] = [100, 200, "javascript", "jquery"];
+
+            console.log(a)
+            console.log(b)
+            console.log(...rest)
+        }
+        {
+            console.log('11_________6')
+            // 변수 값 교환
+            let a = 100, b = 200;
+            [a, b] = [b, a]
+            console.log(a)
+            console.log(b)
+        }
+        {
+            console.log('11_________7')
+            // 다차원 배열 펼침 연산자
+            const [a, [b, c]] = [1, [2, "javascript"]];
+
+            console.log(a)
+            console.log(b)
+            console.log(c)
+        }
+        // 12. 배열 : 데이터 불러오기 : 배열 펼침 연산자(spread operator)
+        {
+            console.log('12_________1')
+            // 배열 복사
+            const arr = [100, 200, "javascript"];
+            const copy = [...arr];
+
+            console.log(arr)
+            console.log(...arr)
+            console.log(copy)
+        }
+        {
+            console.log('12_________2')
+            // 배열 합치기
+            const arr1 = [100, 200];
+            const arr2 = [300, 400];
+            const merged1 = [...arr1, ...arr2];
+            const merged2 = [...arr1, "javascript", ...arr2, "jquery"];
+
+            console.log(arr1.concat(arr2))
+            console.log(merged1)
+            console.log(merged2)
+        }
+        {
+            console.log('12_________3')
+            // 함수를 인자로 사용하기
+            function numbers(a, b, c) {
+                return a + b + c;
+            }
+            const num = [100, 200, 300];
+            console.log(numbers(...num))
         }
         // 13. 객체 : 데이터 불러오기 : 기본
         {
+            console.log('13_________')
             const obj = {
                 a: 100,
                 b: 200,
                 c: "javascript"
             }
-            console.log("13..........");
             console.log(obj.a);
             console.log(obj.b);
             console.log(obj.c);
@@ -685,6 +775,7 @@
         }
         // 14. 객체 : 데이터 불러오기 : Object.keys()
         {
+            console.log('14_________')
             const obj = {
                 a: 100,
                 b: 200,
@@ -694,6 +785,7 @@
         }
         // 15. 객체 : 데이터 불러오기 : Object.values()
         {
+            console.log('15_________')
             {
                 const obj = {
                     a: 100,
@@ -705,6 +797,7 @@
         }
         // 16. 객체 : 데이터 불러오기 : Object.entries()
         {
+            console.log('16_________')
             {
                 const obj = {
                     a: 100,
@@ -716,6 +809,7 @@
         }
         // 17. 객체 : 데이터 불러오기 : Object.assign()
         {
+            console.log('17_________')
             {
                 const obj1 = {
                     a: 100,
@@ -731,6 +825,7 @@
         }
         // 18. 객체 : 데이터 불러오기 : hasOwnProperty
         {
+            console.log('18_________')
             const obj = {
                 a: 100,
                 b: 200,
@@ -747,6 +842,7 @@
         }
         // 19. 객체 : 데이터 불러오기 : for in
         {
+            console.log('19_________')
             const obj = {
                 a: 100,
                 b: 200,
