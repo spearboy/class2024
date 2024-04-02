@@ -50,8 +50,8 @@
                             <span></span>
                         </label>
                     </div>
-                    <div class="answer"></div>
-                    <div class="desc"></div>
+                    <div class="answer none"></div>
+                    <div class="desc none"></div>
                 </div>
                 <div class="quiz__footer">
                     <button class="confirm">정답 확인하기</button>
@@ -63,7 +63,7 @@
         <a href="mailto:tsagaanaa123@naver.com">tsagaanaa123@naver.com</a>
     </footer>
     <script>
-        const quizWrap = document.querySelector(".quiz__wrap"); 
+        const quizWrap = document.querySelector(".quiz__wrap");
         const quizHeader = quizWrap.querySelector(".quiz__header");
         const quizQuestion = quizWrap.querySelector(".question");
         const quizAnswer = quizWrap.querySelector(".answer");
@@ -71,6 +71,8 @@
         const quizChoice = quizWrap.querySelectorAll(".quiz__choice span");
         const quizSelect = quizWrap.querySelectorAll(".quiz__choice input");
         const quizConfirm = quizWrap.querySelector(".confirm");
+
+        const none = quizWrap.querySelectorAll(".none");
 
         const quizInfo = {
             date: "2021년 1회",
@@ -81,16 +83,37 @@
             answer: "2",
             desc: "디자인의 기본 요소에는 점, 선, 면, 질감이 있습니다."
         }
-        // for(let i = 0; i < quizInfo.choices.length; i++){
-        //     console.log(quizInfo.choices[i])
-        // }
-        quizInfo.choices.forEach(element => {
-            console.log(element)
-        });
 
         quizHeader.innerHTML = quizInfo.date + " " + quizInfo.type;
-        quizQuestion.innerHTML ='<span>'+ quizInfo.num + ". " + quizInfo.question+'</span>';
+        quizQuestion.innerHTML = '<span>' + quizInfo.num + ". " + quizInfo.question + '</span>';
+        quizAnswer.innerHTML = quizInfo.answer;
+        quizDesc.innerHTML = quizInfo.desc;
 
+        for (let i = 0; i < quizInfo.choices.length; i++) {
+            quizChoice[i].innerHTML = quizInfo.choices[i];
+        }
+
+        quizConfirm.addEventListener('click', () => {
+            let selectedChoice = null;
+            for (let i = 0; i < quizSelect.length; i++) {
+                if (quizSelect[i].checked) {
+                    selectedChoice = quizSelect[i].value;
+                    break;
+                }
+            }
+            if (selectedChoice != null) {
+                if (selectedChoice == quizInfo.answer) {
+                    alert('정답이에요!')
+                    quizDesc.classList.remove('none')
+                } else {
+                    alert('틀렸어요!')
+                    quizAnswer.classList.remove('none')
+                    quizDesc.classList.remove('none')
+                }
+            } else {
+                alert('보기를 선택해주세요!!')
+            }
+        })
     </script>
 </body>
 

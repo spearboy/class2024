@@ -7,9 +7,26 @@
 [퀴즈게임](https://spearboy.github.io/class2024/quiz/index.html)   
 
 [퀴즈01](https://spearboy.github.io/class2024/quiz/quiz01.html)   
--변수(const)
--선택자(quertSelector)
--메서드(innerText(), classList, addEventListener, if문)
+-변수(const)   
+-선택자(quertSelector)   
+-메서드(innerText(), classList, addEventListener, if문)   
+
+[퀴즈02](https://spearboy.github.io/class2024/quiz/quiz02.html)   
+-변수, 배열   
+-선택자(quertSelector)   
+-메서드(innerText(), classList, addEventListener, if문)   
+
+[퀴즈03](https://spearboy.github.io/class2024/quiz/quiz03.html)   
+-변수, 배열, 객체   
+-선택자(quertSelector,quertSelectorAll)   
+-반복문(for, break)   
+-메서드(innerHTML(), classList, addEventListener, if문)   
+
+[퀴즈04](https://spearboy.github.io/class2024/quiz/quiz04.html)   
+-변수, 배열, 객체, 템플릿 리터럴   
+-선택자(quertSelector,quertSelectorAll)   
+-반복문(forEach)   
+-메서드(innerHTML(), join(), push())   
 
 # vscode 확장 프로그램
 Live Server : 웹페이지 미리보기   
