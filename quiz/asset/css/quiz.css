@@ -168,7 +168,6 @@ body::after {
   border: 1px solid #eee;
   padding: 17px;
   display: flex;
-  margin-bottom: 10px;
   border-radius: 3px;
   font-size: 16px;
   line-height: 1.5;
@@ -226,7 +225,8 @@ body::after {
 .quiz__wrap .quiz .quiz__main .desc::before {
   content: "🤦‍♂️ 설명 : ";
 }
-.quiz__wrap .quiz .quiz__footer .confirm {
+.quiz__wrap .quiz .quiz__footer .confirm,
+.quiz__wrap .quiz .quiz__footer .next {
   background-color: #e7e2ff;
   color: #000;
   width: 100%;
@@ -238,7 +238,8 @@ body::after {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.quiz__wrap .quiz .quiz__footer .confirm:hover {
+.quiz__wrap .quiz .quiz__footer .confirm:hover,
+.quiz__wrap .quiz .quiz__footer .next:hover {
   background-color: transparent;
   border: 1px dashed #412e91;
   color: #412e91;
