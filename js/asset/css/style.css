@@ -1,3 +1,4 @@
+@import url("https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css");
 @font-face {
   font-family: "GmarketSans";
   font-weight: 300;
@@ -69,6 +70,7 @@
 }
 
 :root {
+  --fontNG: "NexonLv1Gothic";
   --fontN: "nanumSquareNeo";
   --fontG: "GmarketSans";
 }
