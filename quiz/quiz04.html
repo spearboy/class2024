@@ -119,26 +119,25 @@
         const updateQuiz = () => {
             const quizArray = [];
             quizInfo.forEach((quiz, index) => {
-                quizArray.push(`
-                    <div class="quiz">
+                quizArray.push(`<div class="quiz">
                         <div class="quiz__header">${quiz.date} ${quiz.type}</div>
                         <div class="quiz__main">
                             <div class="question"><span>${index + 1}. ${quiz.question}</span></div>
                             <div class="choises">
-                                <label for="choises1-${index}" class="quiz__choice">
-                                    <input type="radio" name="choises-${index}" id="choises1-${index}" value="1">
+                                <label for="choises${index}-1" class="quiz__choice">
+                                    <input type="radio" name="choises-${index}" id="choises${index}-1" value="1">
                                     <span>${quiz.choices[1]}</span>
                                 </label >
-                                <label for="choises2-${index}" class="quiz__choice">
-                                    <input type="radio" name="choises-${index}" id="choises2-${index}" value="2">
+                                <label for="choises${index}-2" class="quiz__choice">
+                                    <input type="radio" name="choises-${index}" id="choises${index}-2" value="2">
                                     <span>${quiz.choices[2]}</span>
                                 </label>
-                                <label for="choises3-${index}" class="quiz__choice">
-                                    <input type="radio" name="choises-${index}" id="choises3-${index}" value="3">
+                                <label for="choises${index}-3" class="quiz__choice">
+                                    <input type="radio" name="choises-${index}" id="choises${index}-3" value="3">
                                     <span>${quiz.choices[3]}</span>
                                 </label>
-                                <label for="choises4-${index}" class="quiz__choice">
-                                    <input type="radio" name="choises-${index}" id="choises4-${index}" value="4">
+                                <label for="choises${index}-4" class="quiz__choice">
+                                    <input type="radio" name="choises-${index}" id="choises${index}-4" value="4">
                                     <span>${quiz.choices[4]}</span>
                                 </label>
                             </div >
@@ -148,13 +147,50 @@
                         <div class="quiz__footer">
                             <button class="confirm">정답 확인하기</button>
                         </div>
-                    </div>
-                `)
+                    </div>`)
 
                 quizWrap.innerHTML = quizArray.join("");
             })
         }
-        updateQuiz();
+
+        const answerQuiz = (index) => {
+            // 사용자가 채크한 정답
+            const quizChecked = quizWrap.querySelectorAll(`.quiz__main .choises input[name="choises-${index}"]:checked`)
+            const quizElement = quizWrap.querySelectorAll(`.quiz`)[index]
+            const descElement = quizWrap.querySelectorAll(`.desc`)[index]
+            const answerElement = quizWrap.querySelectorAll(`.answer`)[index]
+            const confirmElement = quizWrap.querySelectorAll(`.confirm`)[index]
+            quizElement.classList.remove('good', 'bad')
+            if (quizChecked.length > 0) {
+                const userAnswer = quizChecked[0].value;
+                if (userAnswer == quizInfo[index].answer) {
+                    quizElement.classList.add('good')
+                } else {
+                    quizElement.classList.add('bad')
+                    answerElement.classList.remove('none')
+                }
+                descElement.classList.remove('none')
+                confirmElement.classList.add('none')
+            } else {
+                // alert("보기를 선택해주세요!!")
+                console.log("보기를 선택해주세요!!")
+            }
+        }
+        //  페이지가 로드된후 실행
+        document.addEventListener('DOMContentLoaded', () => {
+            // 문제 출력
+            updateQuiz();
+
+
+            // 정답 확인
+            quizWrap.querySelectorAll('.confirm').forEach((button, index) => {
+
+                button.addEventListener('click', () => {
+                    answerQuiz(index)
+                })
+            });
+        })
+
     </script>
 </body>
 

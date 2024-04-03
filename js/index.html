@@ -39,66 +39,56 @@
             align-items: center;
             justify-content: center;
             border: 8px solid #000;
-            background:
-                radial-gradient(farthest-side at bottom left,
-                    rgba(57, 40, 207, 0.5),
-                    transparent),
-                radial-gradient(farthest-corner at bottom right,
-                    rgba(15, 46, 131, 0.39),
-                    transparent 400px);
+            background: radial-gradient(farthest-side at bottom left, rgba(57, 40, 207, 0.5), transparent), radial-gradient(farthest-corner at bottom right, rgba(15, 46, 131, 0.39), transparent 400px);
+        }
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                z-index: -1;
-                width: calc(100% - 16px);
-                height: calc(100% - 16px);
-                border: 8px solid #112d86;
-            }
+        main::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            width: calc(100% - 16px);
+            height: calc(100% - 16px);
+            border: 8px solid #112d86;
+        }
 
-            h1 {
-                font-size: 5vw;
-                margin-bottom: 3vw;
+        main h1 {
+            font-size: 5vw;
+            margin-bottom: 3vw;
+        }
 
-                a {
-                    text-decoration: none;
-                    color: rgb(14, 11, 70);
-                    cursor: pointer;
-                }
-            }
+        main h1 a {
+            text-decoration: none;
+            color: #0e0b46;
+            cursor: pointer;
+        }
 
-            nav {
-                ul {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: center;
-                    flex-wrap: wrap;
+        main nav ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-                    li {
-                        a {
-                            display: block;
-                            font-size: 16px;
-                            font-size: 16px;
-                            font-family: "nanumSquareNeo";
-                            border: 1px dashed #112d86;
-                            padding: 10px;
-                            margin: 2px;
-                            background-color: #fff;
-                            color: #112d86;
-                            transition: all 0.3s ease;
+        main nav ul li a {
+            display: block;
+            font-size: 16px;
+            font-size: 16px;
+            font-family: "nanumSquareNeo";
+            border: 1px dashed #112d86;
+            padding: 10px;
+            margin: 2px;
+            background-color: #fff;
+            color: #112d86;
+            transition: all 0.3s ease;
+        }
 
-                            &:hover {
-                                background-color: #112d86;
-                                border: 1px solid #112d86;
-                                color: #fff;
-                            }
-                        }
-                    }
-                }
-            }
+        main nav ul li a:hover {
+            background-color: #112d86;
+            border: 1px solid #112d86;
+            color: #fff;
         }
 
         .dog {
