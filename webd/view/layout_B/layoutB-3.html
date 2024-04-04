@@ -7,18 +7,8 @@
     <title>B-3</title>
     <style>
         * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-
-        .text_align {
-            text-align: center;
-            line-height: 1.5;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+            margin: 0;
+            padding: 0;
         }
 
         #wrap {
@@ -27,100 +17,97 @@
 
         #header {
             width: 100%;
+            height: 100px;
+            background-color: #aaa;
         }
 
         #header .header-container {
             width: 1200px;
-            height: 100px;
-            background-color: #e7bcbc;
-            margin: 0px auto;
+            margin: 0 auto;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
         }
 
         #header .header-container .logo {
-            width: 300px;
+            width: 20%;
             height: 100px;
-            background-color: #ad2525;
+            background-color: #bbb;
         }
 
         #header .header-container .nav {
-            width: calc(100% - 300px);
+            width: 80%;
             height: 100px;
-            background-color: #365738;
+            background-color: #ccc;
         }
 
         #slider {
             width: 100%;
+            height: 300px;
         }
 
         #slider .slider-container {
             width: 1200px;
             height: 300px;
-            background-color: #523131;
-            margin: 0px auto;
+            background-color: #ddd;
+            margin: 0 auto;
         }
 
         #contents {
             width: 100%;
+            height: 200px;
         }
 
         #contents .contents-container {
             width: 1200px;
-            margin: 0px auto;
+            margin: 0 auto;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
         }
 
-        #contents .contents-container .content {
-            width: 400px;
+        #contents .contents-container .content1 {
+            width: 33.3333%;
             height: 200px;
-            background-color: #219783;
+            background-color: #eee;
         }
 
-        #contents .contents-container .content:nth-child(2) {
-            width: 400px;
+        #contents .contents-container .content2 {
+            width: 33.3333%;
             height: 200px;
-            background-color: #37684f;
+            background-color: #a1a1a1;
         }
 
-        #contents .contents-container .content:last-child {
-            width: 400px;
+        #contents .contents-container .content3 {
+            width: 33.3333%;
             height: 200px;
-            background-color: #a1ac42;
+            background-color: #b1b1b1;
         }
 
         #footer {
             width: 100%;
+            height: 100px;
+            background-color: #c1c1c1;
         }
 
         #footer .footer-container {
             width: 1200px;
-            height: 100px;
-            margin: 0px auto;
+            margin: 0 auto;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
         }
 
-        #footer .footer-container .logo {
-            width: 300px;
+        #footer .footer-container .footer1 {
+            width: 20%;
             height: 100px;
-            background-color: #7c8f81;
+            background-color: #d1d1d1;
         }
 
-        #footer .footer-container .footer-wrapper {
-            width: calc(100% - 300px);
+        #footer .footer-container .footer2 {
+            width: 60%;
             height: 100px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background-color: #e1e1e1;
+        }
+
+        #footer .footer-container .footer3 {
+            width: 20%;
+            height: 100px;
+            background-color: #a9a9a9;
         }
     </style>
 </head>
@@ -129,27 +116,31 @@
     <div id="wrap">
         <header id="header">
             <div class="header-container">
-                <div class="logo text_align">로고</div>
-                <nav class="nav text_align">메뉴</nav>
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
             </div>
         </header>
+        <!-- header -->
         <article id="slider">
-            <div class="slider-container text_align">이미지 슬라이드</div>
+            <div class="slider-container"></div>
         </article>
+        <!-- slider -->
         <main id="contents">
             <div class="contents-container">
-                <section class="content text_align">공지사항/갤러리</section>
-                <section class="content text_align">배너</section>
-                <section class="content text_align">바로가기</section>
+                <section class="content1"></section>
+                <section class="content2"></section>
+                <section class="content3"></section>
             </div>
         </main>
+        <!-- contents -->
         <footer id="footer">
             <div class="footer-container">
-                <div class="logo text_align">로고</div>
-                <div class="footer-wrapper text_align">카피라이터</div>
-                <div class="logo text_align">페일리 사이트</div>
+                <div class="footer1"></div>
+                <div class="footer2"></div>
+                <div class="footer3"></div>
             </div>
         </footer>
+        <!-- footer -->
     </div>
 </body>
 

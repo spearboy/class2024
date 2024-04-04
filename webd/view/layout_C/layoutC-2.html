@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 1000px;
+            display: flex;
+        }
+
+        #aside {
+            width: 20%;
+            height: 650px;
+            background-color: #aaa;
+        }
+
+        #aside .logo {
+            height: 100px;
+            background-color: #bbb;
+        }
+
+        #aside .nav {
+            height: 550px;
+            background-color: #ccc;
+        }
+
+        #main {
+            width: 80%;
+        }
+
+        #slider {
+            height: 350px;
+            background-color: #ddd;
+        }
+
+        #contents {
+            display: flex;
+        }
+
+        #contents .contents1 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #eee;
+        }
+
+        #contents .contents2 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #a1a1a1;
+        }
+
+        #contents .contents3 {
+            width: 33.333%;
+            height: 200px;
+            background-color: #b1b1b1;
+        }
+
+        #footer {
+            display: flex;
+        }
+
+        #footer .footer1 {
+            width: 80%;
+            height: 100px;
+            background-color: #c1c1c1;
+        }
+
+        #footer .footer2 {
+            width: 20%;
+        }
+
+        #footer .footer2 .footer2-1 {
+            height: 50px;
+            background-color: #d1d1d1;
+        }
+
+        #footer .footer2 .footer2-2 {
+            height: 50px;
+            background-color: #e1e1e1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <h1 class="logo"></h1>
+            <nav class="nav"></nav>
+        </aside>
+        <main id="main">
+            <article id="slider"></article>
+            <section id="contents">
+                <div class="contents1"></div>
+                <div class="contents2"></div>
+                <div class="contents3"></div>
+            </section>
+            <footer id="footer">
+                <div class="footer1"></div>
+                <div class="footer2">
+                    <div class="footer2-1"></div>
+                    <div class="footer2-2"></div>
+                </div>
+            </footer>
+        </main>
+
+    </div>
+</body>
+
+</html>
