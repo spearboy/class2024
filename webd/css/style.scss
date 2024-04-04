@@ -16,13 +16,14 @@
 #side {
     width: 266px;
     height: 100vh;
-    padding: 20px;
+    padding: 12px;
     background-color: #ccc;
+    overflow: auto;
 
     h2 {
         font-size: 30px;
         margin: 5px 3px 10px;
-        color: #b417b4;
+        color: #112d86;
     }
 
     nav {
@@ -47,17 +48,17 @@
                     transition: all 0.3s ease;
 
                     &:hover {
-                        background-color: #b417b4;
+                        background-color: #112d86;
                         color: #fff;
-                        border-color: #b417b4;
+                        border-color: #112d86;
                     }
                 }
 
                 &.active {
                     a {
-                        background-color: #b417b4;
+                        background-color: #112d86;
                         color: #fff;
-                        border-color: #b417b4;
+                        border-color: #112d86;
                     }
                 }
             }
