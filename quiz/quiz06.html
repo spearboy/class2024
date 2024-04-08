@@ -30,6 +30,7 @@
     <footer id="footer">
         <a href="mailto:tsagaanaa123@naver.com">tsagaanaa123@naver.com</a>
     </footer>
+    <div class="check">정답확인하기</div>
     <script>
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
@@ -65,7 +66,7 @@
                     return formatterdQuiz;
                 });
                 updateQuiz()
-                console.log(quizInfo)
+                // console.log(quizInfo)
             })
         }
 
@@ -74,39 +75,86 @@
             const quizArray = [];
             quizInfo.forEach((quiz, index) => {
                 quizArray.push(`<div class="quiz">
-                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+                <div class="quiz__header">${quiz.date} ${quiz.type}</div>
                 <div class="quiz__main">
-                    <div class="question"><span>${index + 1}. ${quizInfo[index].question}</span></div>
+                    <div class="question"><span>${index + 1}. ${quiz.question}</span></div>
                     <div class="choises">
-                        <label for="choises-1" class="quiz__choice">
-                            <input type="radio" name="choises" id="choises-1" value="1">
-                            <span>${quizInfo[index].choices[0]}</span>
+                        <label for="choises${index}-1" class="quiz__choice">
+                            <input type="radio" name="choises-${index}" id="choises${index}-1" value="${quiz.choices[0]}">
+                            <span>${quiz.choices[0]}</span>
                         </label >
-                        <label for="choises-2" class="quiz__choice">
-                            <input type="radio" name="choises" id="choises-2" value="2">
-                            <span>${quizInfo[index].choices[1]}</span>
+                        <label for="choises${index}-2" class="quiz__choice">
+                            <input type="radio" name="choises-${index}" id="choises${index}-2" value="${quiz.choices[1]}">
+                            <span>${quiz.choices[1]}</span>
                         </label>
-                        <label for="choises-3" class="quiz__choice">
-                            <input type="radio" name="choises" id="choises-3" value="3">
-                            <span>${quizInfo[index].choices[2]}</span>
+                        <label for="choises${index}-3" class="quiz__choice">
+                            <input type="radio" name="choises-${index}" id="choises${index}-3" value="${quiz.choices[2]}">
+                            <span>${quiz.choices[2]}</span>
                         </label>
-                        <label for="choises-4" class="quiz__choice">
-                            <input type="radio" name="choises" id="choises-4" value="4">
-                            <span>${quizInfo[index].choices[3]}</span>
+                        <label for="choises${index}-4" class="quiz__choice">
+                            <input type="radio" name="choises-${index}" id="choises${index}-4" value="${quiz.choices[3]}">
+                            <span>${quiz.choices[3]}</span>
                         </label>
                     </div >
-                    <div class="answer none">${quizInfo[index].answer}</div>
-                    <div class="desc none">${quizInfo[index].desc}</div>
+                    <div class="answer none">${quiz.answer}</div>
+                    <div class="desc none">${quiz.desc}</div>
                 </div >
-                <div class="quiz__footer">
-                    <button class="confirm">정답 확인하기</button>
-                    <button class="next none">다음문제</button>
-                </div>
             </div>`)
             })
-            quizWrap.innerHTML= quizArray.join("");
+            quizWrap.innerHTML= quizArray.join(""); 
+            
         }
 
+        // 선택자
+        const quizCheck = document.querySelector('.check');
+        // 정답 버튼을 클릭
+        quizCheck.addEventListener('click', () => {
+            const quizElements = document.querySelectorAll(".quiz");
+            let correctCount = 0; // 맞은 문제의 개수를 저장할 변수
+            let unansweredCount = 0; // 선택되지 않은 문제의 개수를 저장할 변수
+
+            quizElements.forEach((quizElement, index) => {
+                const quizChecked = quizElement.querySelector(`input[name="choises-${index}"]:checked`); // 선택한 정답
+                const quizAnswer = quizElement.querySelector(`.answer`);
+                const quizDesc = quizElement.querySelector(`.desc`);
+
+                if (!quizChecked) {
+                    // 선택되지 않은 문제의 테두리 색을 빨간색으로 변경
+                    quizElement.style.border = '2px solid red';
+                    unansweredCount++;
+                } else {
+                    const userAnswer = quizChecked.value;
+                    const correctAnswer = quizAnswer.textContent;
+                    quizElement.style.border = ''; // 선택된 문제의 테두리 색 초기화
+
+                    quizElement.classList.remove('good', 'bad');
+                    if (userAnswer === correctAnswer) {
+                        quizElement.classList.add('good');
+                        quizDesc.classList.remove('none');
+                        correctCount++; // 정답인 경우 맞은 문제 개수 증가
+                    } else {
+                        quizElement.classList.add('bad');
+                        quizAnswer.classList.remove('none');
+                        quizDesc.classList.remove('none');
+                    }
+                    // 선택된 input 비활성화
+                    const inputs = quizElement.querySelectorAll('input');
+                    inputs.forEach(input => {
+                        input.disabled = true;
+                    });
+                }
+            });
+
+            if (unansweredCount > 0) {
+                alert('문제를 전부 풀어주세요.');
+            } else {
+                const totalQuestions = quizElements.length;
+                const answeredCount = totalQuestions - unansweredCount;
+                const percentage = (correctCount / answeredCount) * 100; // 백분율 계산
+                // 백분율 및 맞은 문제, 틀린 문제 개수 출력
+                alert(`맞은 문제: ${correctCount} / ${answeredCount}\n정답률: ${percentage.toFixed(2)}%`);
+            }
+        });
         // 페이지가 로드된 후 실행
         document.addEventListener('DOMContentLoaded',() =>{
             fetchQuiz()

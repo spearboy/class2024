@@ -105,7 +105,7 @@ body {
 }
 .main__icons .icon img {
   width: 50px;
-  border-radius: 50%;
+  border-radius: 20px;
 }
 .main__icons .icon span {
   font-family: var(--fontN);
