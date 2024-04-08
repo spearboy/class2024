@@ -115,6 +115,9 @@ body::after {
 }
 
 .quiz__wrap {
+  width: 100%;
+  height: calc(100vh - 172px);
+  overflow: auto;
   display: flex;
   flex-direction: row;
   align-items: center;

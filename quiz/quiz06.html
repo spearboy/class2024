@@ -39,8 +39,78 @@
 
         // 문제 가져오기
         const fetchQuiz = () => {
-            
+            fetch("https://spearboy.github.io/class2024/json/gineungsaJC2005_02.json").then(res => res.json()).then(items => {
+                // console.log(items)
+                quizInfo = items.map(item => {
+
+                    // 문제 정보 재할당
+                    const formatterdQuiz = {
+                        date : "2005년 2회",
+                        type : item.subject,
+                        question : item.question,
+                        desc : item.desc,
+                        answer : item.correct_answer,
+                    };
+
+                    // 보기 가져오기
+                    const choices = [...item.incorrect_answers, item.correct_answer];
+                    for (let i = choices.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [choices[i], choices[j]] = [choices[j], choices[i]];
+                    }
+                    // console.log(choices)
+
+                    formatterdQuiz.choices = choices;
+
+                    return formatterdQuiz;
+                });
+                updateQuiz()
+                console.log(quizInfo)
+            })
         }
+
+        // 문제 출력
+        const updateQuiz = () => {
+            const quizArray = [];
+            quizInfo.forEach((quiz, index) => {
+                quizArray.push(`<div class="quiz">
+                <div class="quiz__header">${quizInfo[index].date} ${quizInfo[index].type}</div>
+                <div class="quiz__main">
+                    <div class="question"><span>${index + 1}. ${quizInfo[index].question}</span></div>
+                    <div class="choises">
+                        <label for="choises-1" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises-1" value="1">
+                            <span>${quizInfo[index].choices[0]}</span>
+                        </label >
+                        <label for="choises-2" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises-2" value="2">
+                            <span>${quizInfo[index].choices[1]}</span>
+                        </label>
+                        <label for="choises-3" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises-3" value="3">
+                            <span>${quizInfo[index].choices[2]}</span>
+                        </label>
+                        <label for="choises-4" class="quiz__choice">
+                            <input type="radio" name="choises" id="choises-4" value="4">
+                            <span>${quizInfo[index].choices[3]}</span>
+                        </label>
+                    </div >
+                    <div class="answer none">${quizInfo[index].answer}</div>
+                    <div class="desc none">${quizInfo[index].desc}</div>
+                </div >
+                <div class="quiz__footer">
+                    <button class="confirm">정답 확인하기</button>
+                    <button class="next none">다음문제</button>
+                </div>
+            </div>`)
+            })
+            quizWrap.innerHTML= quizArray.join("");
+        }
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener('DOMContentLoaded',() =>{
+            fetchQuiz()
+        })
     </script>
 </body>
 
