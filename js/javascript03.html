@@ -816,39 +816,198 @@
             info1.result1();
             info2.result2();
         }
+        // 20. 함수 : 즉시실행 함수
+        {
+            (function(){
+                console.log('25. 함수 : 즉시실행 함수')
+            })();
+
+            (() => {
+                console.log('26. 함수 : 즉시실행 함수')
+            })();
+        }
+        // 21. 함수 : 파라미터 함수
+        {
+            function func(str = "27. 함수 : 파라미터 함수"){
+                console.log(str)
+            }
+            func()
+
+            const func2 = (str = "28. 함수 : 파라미터 함수") =>{
+                console.log(str)
+            }
+            func2()
+        }
+        // 22. 함수 : 재귀 함수
+        {
+            // 01 반복문을 사용하는 경우
+
+            function func(num){
+                for (let i = 0; i < num; i++) {
+                    console.log("29. 실행 되었습니다.");
+                }
+            }
+            func(10)
+
+            // 재귀함수를 사용하기
+            function func1(num){
+                if(num < 1 ) return;
+                console.log("30. 실행 되었습니다.");
+                func1(num-1)
+            }
+            func1(10)
+        }
+        // 23. 함수 : 콜백 함수
+        {
+            // 01 이벤트
+            function func() {
+                console.log("31. 실행되었습니다.")
+            }
+            // let btn = '';
+            addEventListener("click",func())
+
+
+            // 02 함수를 다른 함수의 인자로 전달
+            function func1() {
+                console.log("32. 실행되었습니다.")
+            }
+            function func2(callback) {
+                callback()
+            }
+            func2(func1)
+
+            // 03 반복문을 사용하는 경우
+            function func3(num){
+                console.log(num+ " 실행되었습니다.")
+            }
+            function func4(e) {
+                for (let i = 33; i <= 38; i++) {
+                    e(i)
+                }
+            }
+            func4(func3);
+        }
+
+
+
+        // 동기 :
+        // 작업이 순서대로
+        // 코드는 위에서 아래로 순차적으로 진행. 한 작업이 끝나면 다음 작업이 시작
+
+        // 비동기 :
+        // 작업이 순서와 관계없이 여러 작업 처리
+        // 콜백함수, 프로미스, async / await 등을 사용하여 작업이 완료될 때까지 대기하지 않고 다른 작업을 진행할 수 있다. 
+
+
+
+        // 24. 함수 : 비동기방식 : 콜백 함수
+        {
+            // 01 동기적인 함수 호출
+            // function func1() {
+            //     console.log("39. 실행되었습니다.")
+            // }
+            // function func2() {
+            //     console.log("40. 실행되었습니다.")
+            // }
+            // func1()
+            // func2()
+
+            // 02 비동기적인 함수 호출
+            // function func3() {
+            //     setTimeout(() => {
+            //         console.log("41. 실행되었습니다.")
+            //     }, 1000);
+            // }
+            // function func4() {
+            //     console.log("42. 실행되었습니다.")
+            // }
+            // func3()
+            // func4()
+
+            // 03 콜백함수 비동기 호출
+
+            // function func5(callback){
+            //     setTimeout(() => {
+            //         console.log("43. 실행되었습니다.")
+            //         callback();
+            //     }, 1000);
+            // }
+            // function func6(){
+            //         console.log("44. 실행되었습니다.")
+            // }
+            // func5(function () {
+            //     func6();
+            // });
+        }
+        // 25. 함수 : 비동기방식 : 프로미스 함수
+        {
+            let data = true;
+            const func = new Promise((resolve, reject) => {
+                if(data){
+                    resolve("45. 실행 되었습니다.")
+                }else {
+                    reject("46. 실행 되었습니다.")
+                }
+            })
+            func.then(
+                result => document.write(result)
+            ).catch(
+                error => document.write(error)
+            )
+        }
+        // 26. 함수 : 비동기방식 : async/await
+        {
+            // 01 : 일반적인 함수(동기방식)
+            function func(params) {
+                console.log("47. 실행 되었습니다.")
+            }
+            func()
+
+            // 02 : 함수(비동기방식)
+            async function func1() {
+                console.log("48. 실행 되었습니다.")
+            }
+            func1()
+
+            // 03 : 비동기방식(fetch)
+            async function func2() {
+                const result = await fetch("https://spearboy.github.io/class2024/json/gineungsaJC2005_02.json");
+                const data = await result.json();
+                
+                console.log(data)
+            }
+            func2()
+
+            // 04 : 비동기방식 에러(error) 캐치
+            async function func3() {
+                try {
+                    const result = await fetch("https://spearboy.github.io/class2024/json/gineungsaJC2005_02.json");
+                    const data = await result.json();
+                    console.log(data)
+                } catch(error) {
+                    console.log(error)
+                }
+                
+            }
+            func3()
+        }
+        // 27. 함수 : 중첩 함수
+        {
+
+        }
+        // 28. 함수 : 클로저
+        {
+
+        }
+        // 29. 클래스 : 기본
+        {
+
+        }
+        // 30. 클래스 : 상속
+        {
+
+        }
     </script>
 </body>
 
 </html>
-
-
-
-<script>
-    const typingTextArea = document.getElementById('typingText');
-    let typingText = `abc song a b c d e f g h i j k l m n o p q r s t u v w x y z now i know my abcs. next time won't you sing with me? `;
-    let typingIndex = 0;
-    let typingInterval;
-
-    function startTyping() {
-        typingInterval = setInterval(() => {
-            if (typingIndex <= typingText.length) {
-                typingIndex++;
-            } else {
-                clearInterval(typingInterval);
-            }
-        }, 100);
-    }
-
-    typingTextArea.addEventListener('input', () => {
-        typingText = typingTextArea.value.trim();
-        typingIndex = 0;
-        clearInterval(typingInterval);
-        startTyping();
-    });
-
-    typingTextArea.addEventListener('keydown', (event) => {
-        if (event.keyCode === 32) {
-            event.preventDefault();
-        }
-    });
-</script>
