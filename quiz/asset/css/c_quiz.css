@@ -83,67 +83,72 @@ body::after {
   z-index: -1;
 }
 
-#header {
+.timer {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #3734f0;
+}
+
+.start_wrap {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3734f0;
+}
+.start_wrap .inner_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.start_wrap .inner_box p {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+.start_wrap .inner_box .start_btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px 20px;
+  background-color: #8b89f7;
   color: #fff;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
-#header h1 a {
-  display: inline-block;
-  color: #fff;
-  padding: 20px;
-  font-size: 30px;
-}
-#header nav {
-  padding-right: 20px;
-}
-#header nav li {
-  display: inline-block;
-}
-#header nav li a {
-  padding: 10px;
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  border: 1px solid #fff;
-  text-align: center;
-  box-shadow: 1px 1px 0px #fff;
-  line-height: 1;
-  color: #fff;
-}
-#header nav li.active a {
+.start_wrap .inner_box .start_btn:hover {
   background-color: #fff;
-  color: #000;
+  color: #8b89f7;
 }
 
 .quiz__wrap {
   width: 100%;
+  height: 100vh;
   overflow: auto;
   display: flex;
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-}
-.quiz__wrap::-webkit-scrollbar {
-  width: 6px;
-}
-.quiz__wrap::-webkit-scrollbar-thumb {
-  width: 6px;
-  border-radius: 10px;
-  background-color: #e9e9e9;
-}
-.quiz__wrap::-webkit-scrollbar-track {
-  width: 6px;
-  background-color: transparent;
 }
 .quiz__wrap .quiz {
   width: 500px;
   background-color: #fff;
   padding: 40px 30px;
   border-radius: 10px;
-  margin: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -208,6 +213,9 @@ body::after {
   box-shadow: inset 0 0 0 4px #412e91;
   margin-right: 10px;
 }
+.quiz__wrap .quiz .quiz__main .input {
+  margin-top: 20px;
+}
 .quiz__wrap .quiz .quiz__main .input input {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -243,9 +251,6 @@ body::after {
   color: #666;
   line-height: 1.5;
   margin-bottom: 10px;
-}
-.quiz__wrap .quiz .quiz__main .desc::before {
-  content: "🤦‍♂️ 설명 : ";
 }
 .quiz__wrap .quiz .quiz__footer .confirm,
 .quiz__wrap .quiz .quiz__footer .next {
@@ -338,4 +343,4 @@ body::after {
 #footer a:hover {
   text-decoration: underline;
   text-underline-position: under;
-}/*# sourceMappingURL=quiz.css.map */
+}/*# sourceMappingURL=c_quiz.css.map */
