@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>m-2</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #wrap {
+            width: 1200px;
+            height: 700px;
+            margin: 0 auto;
+            /* 가운데정렬 */
+        }
+
+        #header {
+            width: 100%;
+            display: flex;
+        }
+
+        #header .logo {
+            width: 20%;
+            height: 100px;
+            background-color: #aaa;
+        }
+
+        #header .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #bbb;
+        }
+        #header > .nav > ul {
+            margin-left: auto;
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+        #header > .nav > ul > li { 
+            list-style: none;
+        }
+        #header > .nav > ul > li > a {
+            display: inline-block;
+            padding: 10px 50px;
+            background-color: #c9c9c9;
+        }
+        #header > .nav > ul > li > ul {
+            height: 0px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        #header > .nav > ul > li > ul > li {
+            list-style: none;
+        }
+        #header > .nav > ul > li > ul > li > a {
+            background-color: #a9a9a9;
+            display: inline-block;
+            padding: 10px 22px;
+        }
+        #slider {
+            width: 100%;
+            height: 300px;
+            background-color: #ccc;
+        }
+
+        #contents {
+            width: 100%;
+            display: flex;
+        }
+
+        #contents .content1 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #ddd;
+        }
+
+        #contents .content2 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #eee;
+        }
+
+        #contents .content3 {
+            width: 33.3333%;
+            height: 200px;
+            background-color: #a1a1a1;
+        }
+
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+
+        #footer .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #b1b1b1;
+        }
+
+        #footer .footer2 {
+            width: 60%;
+            height: 100px;
+            background-color: #c1c1c1;
+        }
+
+        #footer .footer3 {
+            width: 20%;
+            height: 100px;
+            background-color: #d1d1d1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">메뉴1</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브 메뉴2-1</a></li>
+                            <li><a href="#">서브 메뉴2-2</a></li>
+                            <li><a href="#">서브 메뉴2-3</a></li>
+                            <li><a href="#">서브 메뉴2-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴2</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브 메뉴2-1</a></li>
+                            <li><a href="#">서브 메뉴2-2</a></li>
+                            <li><a href="#">서브 메뉴2-3</a></li>
+                            <li><a href="#">서브 메뉴2-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴3</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브 메뉴2-1</a></li>
+                            <li><a href="#">서브 메뉴2-2</a></li>
+                            <li><a href="#">서브 메뉴2-3</a></li>
+                            <li><a href="#">서브 메뉴2-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">메뉴4</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브 메뉴2-1</a></li>
+                            <li><a href="#">서브 메뉴2-2</a></li>
+                            <li><a href="#">서브 메뉴2-3</a></li>
+                            <li><a href="#">서브 메뉴2-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- header -->
+        <div id="slider"></div>
+        <!-- slider -->
+        <div id="contents">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="content3"></div>
+        </div>
+        <!-- contents -->
+        <div id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </div>
+        <!-- footer -->
+    </div>
+    <script>
+        // $(window).ready(function(){
+        //     $('.nav > ul > li').on('mouseover',function(){
+        //         $('.nav > ul > li').find('ul').stop().slideDown()
+        //     }).on('mouseout',function(){
+        //         $('.nav > ul > li').find('ul').stop().slideUp()
+        //     })
+        // })
+        window.onload=function(){
+            const navList = document.querySelector(".nav > ul");
+
+            navList.addEventListener('mouseover',function(){
+                navList.querySelectorAll(".submenu").forEach(sub => {
+                    sub.style.height = "165px";
+                })
+            })
+            navList.addEventListener('mouseout',function(){
+                navList.querySelectorAll(".submenu").forEach(sub => {
+                    sub.style.height = "0px";
+                })
+            })
+        }
+    </script>
+</body>
+
+</html>
