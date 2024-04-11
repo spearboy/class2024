@@ -221,7 +221,7 @@ body::after {
      -moz-appearance: none;
           appearance: none;
   width: 100%;
-  padding: 20px;
+  padding: 10px 20px;
   outline: none;
   border: 1px solid #000;
   border-radius: 5px;
@@ -244,13 +244,16 @@ body::after {
   content: "🤦‍♂️ 정답 : ";
 }
 .quiz__wrap .quiz .quiz__main .desc {
-  border: 1px solid #000;
-  padding: 20px;
+  padding: 20px 0px;
   border-radius: 5px;
   font-size: 16px;
   color: #666;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 .quiz__wrap .quiz .quiz__footer .confirm,
 .quiz__wrap .quiz .quiz__footer .next {
