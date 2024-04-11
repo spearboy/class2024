@@ -18,25 +18,18 @@
     </div>
     <main id="main">
         <div class="quiz__wrap">
-            <div class="quiz">
-                <div class="quiz__header"></div>
-                <div class="quiz__main">
-                    <div class="question"><span></span></div>
-                    <div class="desc"></div>
-                    <div class="input">
-                        <input id="input" type="text" placeholder="정답을 입력해주세요">
-                    </div>
-                    <div class="answer none"></div>
-                </div >
-                <div class="quiz__footer">
-                    <button class="confirm">정답 확인하기</button>
-                    <button class="next none">다음문제</button>
-                </div>
-            </div>
         </div>
-
-        
     </main>
+    <div class="layer_popup_wrapper">
+        <div class="layer_popup">
+            <p>문제를 모두 풀었습니다.</p>
+            <p>총 <span class="full_quiz"></span>문제</p>
+            <p>정답 <span class="good_quiz"></span>개</p>
+            <p>오답 <span class="bad_quiz"></span>개</p>
+            <p>점수 <span class="quiz_sc"></span>점</p>
+            <button id="resetQuiz">다시하기</button>
+        </div>
+    </div>
     <script>
         // 선택자
         const quizWrap = document.querySelector('.quiz__wrap');
@@ -48,7 +41,7 @@
         let badNum = 0;
         
         const fetchQuiz = () => {
-            fetch("https://webstoryboy.github.io/webstoryboy/w_json/gineungsaShort.json").then(res => res.json()).then(items => {
+            fetch("https://spearboy.github.io/class2024/json/gisa_test.json").then(res => res.json()).then(items => {
                 // console.log(items)
                 quizInfo = items.map(item => {
                     // 문제 정보 재할당
@@ -67,6 +60,11 @@
             })
         }
 
+        function calculateScore(correctCount, incorrectCount) {
+            // 맞은 문제의 수를 백분율로 계산
+            var correctPercentage = (correctCount / (correctCount + incorrectCount)) * 100;
+            return Math.trunc(correctPercentage);
+        }
         const updateQuiz = (index) => {
             let quizWrapTag = "";
              quizWrapTag +=`<div class="quiz">`;
@@ -88,6 +86,11 @@
             quizWrapTag +=`</div>`;
             quizWrap.innerHTML = quizWrapTag;
 
+            // Focus on the input element
+            const inputElement = quizWrap.querySelector('#input');
+            if (inputElement) {
+                inputElement.focus();
+            }
             // 선택자
             const quizConfirm = quizWrap.querySelector('.confirm');
             const quizNext = quizWrap.querySelector('.next');
@@ -97,27 +100,44 @@
                 return str.replace(/[^\w\sㄱ-ㅎㅏ-ㅣ가-힣]/gi, ''); // \w는 알파벳과 숫자를 의미합니다.
             }
 
+            let check_empty = 0;
             // 정답 버튼을 클릭할 때 호출되는 함수
             quizConfirm.addEventListener('click', () => {
-                const quizChecked = quizWrap.querySelector(`#input`);
-                if (quizChecked) {
-                    const userAnswer = removeSpecialCharactersAndWhitespace(quizChecked.value).toLowerCase(); // 특수 문자와 공백 제거한 뒤 소문자로 변환
-                    const quizAnswer = removeSpecialCharactersAndWhitespace(quizInfo[index].answer).toLowerCase(); // 특수 문자와 공백 제거한 뒤 소문자로 변환
+            const quizChecked = quizWrap.querySelector(`#input`);
+                if (quizChecked.value != "") {
+                    const userAnswer = removeSpecialCharactersAndWhitespace(quizChecked.value).toLowerCase();
+                    const quizAnswer = removeSpecialCharactersAndWhitespace(quizInfo[index].answer).toLowerCase();
                     const quizElement = quizWrap.querySelector(`.quiz`);
                     const answerElement = quizWrap.querySelector(`.answer`);
-                    console.log(userAnswer +" == ?" +quizAnswer);
-                    if (userAnswer === quizAnswer) { // 대소문자 정확히 비교
+                    console.log(userAnswer + " == ?" + quizAnswer);
+                    if (userAnswer === quizAnswer) {
                         quizElement.classList.add('good');
+                        goodNum++;
                     } else {
                         quizElement.classList.add('bad');
                         answerElement.classList.remove('none');
+                        badNum++;
                     }
                     quizNext.classList.remove('none');
                     quizConfirm.classList.add('none');
                 } else {
-                    alert('보기를 선택해주세요!');
+                    check_empty++;
+                    if(check_empty > 1){
+                        const quizElement = quizWrap.querySelector(`.quiz`);
+                        const answerElement = quizWrap.querySelector(`.answer`);
+                        badNum++;
+                        check_empty = 0;
+                        quizElement.classList.add('bad');
+                        answerElement.classList.remove('none');
+                        quizNext.classList.remove('none');
+                        quizConfirm.classList.add('none');
+                    }else {
+                        alert('답이 비어있습니다. 한 번 더 비어있는 상태로 클릭 시 오답 처리니 주의해 주세요.');
+                    }
                 }
             });
+
+            // Enter key press event handler
 
             // 다음 문제 버튼을 클릭
             quizNext.addEventListener('click', () => {
@@ -125,12 +145,12 @@
                     currentIndex++;
                     updateQuiz(currentIndex)
                 } else {
-                    function calculateScore(correctCount, incorrectCount) {
-                        // 맞은 문제의 수를 백분율로 계산
-                        var correctPercentage = (correctCount / (correctCount + incorrectCount)) * 100;
-                        return correctPercentage;
-                    }
-                    alert('모든 문제를 풀었습니다. 총점 100점중 '+calculateScore(goodNum, badNum)+'점 입니다.')
+                    const quiz_wrap = document.querySelector(".layer_popup_wrapper");
+                    quiz_wrap.querySelector(".full_quiz").innerHTML = quizInfo.length;
+                    quiz_wrap.querySelector(".good_quiz").innerHTML = goodNum;
+                    quiz_wrap.querySelector(".bad_quiz").innerHTML = badNum;
+                    quiz_wrap.querySelector(".quiz_sc").innerHTML = calculateScore(goodNum, badNum);
+                    quiz_wrap.style.transform = "scale(1)";
                 }
             })
         }
