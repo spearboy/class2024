@@ -31,20 +31,16 @@
         </div>
     </div>
     <script>
-        // 선택자
         const quizWrap = document.querySelector('.quiz__wrap');
 
-        // 변수
-        let currentIndex = 0; // 현재 문제에 대한 값
+        let currentIndex = 0;
         let quizInfo = [];
         let goodNum = 0;
         let badNum = 0;
         
         const fetchQuiz = () => {
             fetch("https://spearboy.github.io/class2024/json/gisa_test.json").then(res => res.json()).then(items => {
-                // console.log(items)
                 quizInfo = items.map(item => {
-                    // 문제 정보 재할당
                     const formatterdQuiz = {
                         date : item.time,
                         question : item.question,
@@ -55,13 +51,12 @@
                     }
                     return formatterdQuiz;
                 });
-                console.log(quizInfo);
+                // console.log(quizInfo);
                 updateQuiz(currentIndex)
             })
         }
 
         function calculateScore(correctCount, incorrectCount) {
-            // 맞은 문제의 수를 백분율로 계산
             var correctPercentage = (correctCount / (correctCount + incorrectCount)) * 100;
             return Math.trunc(correctPercentage);
         }
@@ -86,22 +81,20 @@
             quizWrapTag +=`</div>`;
             quizWrap.innerHTML = quizWrapTag;
 
-            // Focus on the input element
             const inputElement = quizWrap.querySelector('#input');
             if (inputElement) {
                 inputElement.focus();
             }
-            // 선택자
+
             const quizConfirm = quizWrap.querySelector('.confirm');
             const quizNext = quizWrap.querySelector('.next');
-            // 정답 버튼을 클릭
-            // 문자열에서 특수 문자와 공백을 제거하는 함수
+
             function removeSpecialCharactersAndWhitespace(str) {
-                return str.replace(/[^\w\sㄱ-ㅎㅏ-ㅣ가-힣]/gi, ''); // \w는 알파벳과 숫자를 의미합니다.
+                return str.replace(/[^\w\sㄱ-ㅎㅏ-ㅣ가-힣]/gi, '');
             }
 
             let check_empty = 0;
-            // 정답 버튼을 클릭할 때 호출되는 함수
+
             quizConfirm.addEventListener('click', () => {
             const quizChecked = quizWrap.querySelector(`#input`);
                 if (quizChecked.value != "") {
@@ -136,10 +129,6 @@
                     }
                 }
             });
-
-            // Enter key press event handler
-
-            // 다음 문제 버튼을 클릭
             quizNext.addEventListener('click', () => {
                 if (currentIndex < quizInfo.length - 1) {
                     currentIndex++;
@@ -164,7 +153,6 @@
                 startWrap.style.transition = "opacity 1s";
                 startWrap.style.opacity = 0;
 
-                // 애니메이션이 완료된 후에 요소를 숨깁니다.
                 setTimeout(function() {
                     startWrap.style.display = "none";
                 }, 1000);
