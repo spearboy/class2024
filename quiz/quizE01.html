@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/quizE.css">
+    <title>정보처리기능사 주관식 100</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="first_rending_page">
+        <div class="quiz_text">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
+    </div>
+    <div class="redy_to_play">
+        <div class="start_timer">
+            <div></div>
+            <img src="../asset/img/quiz_run.gif" alt="">
+        </div>
+        <div class="game_start_wrapper">
+            <div class="guid_text">
+                <div class="guid_inner_text">
+                    정보처리 기능사 주관식 100문제!
+                    <div class="sub_text">문제는 기출문제 기준으로 100문제 입니다.</div>
+                    <div class="sub_text">제한시간은 30분 입니다. 남은 시간은 화면 상단의 표시됩니다.</div>
+                </div>
+                <div class="quiz_wrapper">
+                </div>
+                <div class="timer">
+                    <div class="timer_m"></div>
+                </div>
+            </div>
+            <div class="game_start_btn">
+                <span>시작하기</span>
+            </div>
+        </div>
+    </div>
+    <div class="layer_popup_wrapper">
+        <div class="layer_popup">
+            <p class="end_type">문제를 모두 풀었습니다.</p>
+            <p>총 <span class="full_quiz"></span>문제</p>
+            <p>정답 <span class="good_quiz"></span>개</p>
+            <p>오답 <span class="bad_quiz"></span>개</p>
+            <p>점수 <span class="quiz_sc"></span>점</p>
+            <button id="resetQuiz">다시하기</button>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        let quizInfo = [];
+        let goodNum = 0;
+        let badNum = 0;
+        
+        const fetchQuiz = () => {
+            fetch("https://spearboy.github.io/class2024/json/gisa_test.json").then(res => res.json()).then(items => {
+                quizInfo = items.map(item => {
+                    const formatterdQuiz = {
+                        date : item.time,
+                        question : item.question,
+                        answer : item.correct_answer,
+                    };
+                    if(item.question){
+                        formatterdQuiz.desc = item.question_desc;
+                    }
+                    return formatterdQuiz;
+                });
+                console.log(quizInfo);
+            })
+        }
+        function run_quiz_update(idx) {
+            let innerHtml = "";
+
+            innerHtml += `<div class="quiz">`;
+                innerHtml += `<div class="number">${idx+1}번 문제입니다. 남은 문제는 이제 ${quizInfo.length - (currentIndex+1)}문제!</div>`;
+                innerHtml += `<div class="question">문제의 정답을 적어주세요!</div>`;
+                if(quizInfo[idx].desc){
+                    innerHtml +=`<div class="desc">Q. ${quizInfo[idx].question}<br><br>${quizInfo[index].desc}<></div>`;
+                }else {
+                    innerHtml += `<div class="desc">Q. ${quizInfo[idx].question}</div>`;
+                }
+                innerHtml += `<div class="user_answer"><input type="text" placeholder="정답을 적어주세요. 띄어쓰기나 ','은 자유입니다."></div>`;
+                innerHtml += `<div class="real_answer none">${quizInfo[idx].answer}</div>`;
+                innerHtml += `<div class="check_btn">정답 확인하기</div>`;
+                innerHtml += `<div class="next_btn none">다음 문제</div>`;
+            innerHtml += `</div>`;
+
+            $('.quiz_wrapper').html(innerHtml);
+        }
+        function end_of_game(){
+            if(end_type != 1) {
+                $('.end_type').text('시간이 초과 되었습니다!ㅠㅠ \n 남은 문제는 오답처리 됩니다.')
+                $(".layer_popup_wrapper").find(".full_quiz").text(quizInfo.length);
+                $(".layer_popup_wrapper").find(".good_quiz").text(goodNum);
+                $(".layer_popup_wrapper").find(".bad_quiz").text(badNum);
+                $(".layer_popup_wrapper").find(".quiz_sc").text(calculateScore(goodNum, badNum));
+                $(".layer_popup_wrapper").css('transform','scale(1)');
+            }else {
+                $('.end_type').text('문제를 모두 풀었습니다!')
+                $(".layer_popup_wrapper").find(".full_quiz").text(quizInfo.length);
+                $(".layer_popup_wrapper").find(".good_quiz").text(goodNum);
+                $(".layer_popup_wrapper").find(".bad_quiz").text(badNum);
+                $(".layer_popup_wrapper").find(".quiz_sc").text(calculateScore(goodNum, badNum));
+                $(".layer_popup_wrapper").css('transform','scale(1)');
+            }
+        }
+        let time_num = 0;
+        function start_timer() {
+            let interVal = setInterval(function(){
+                if(time_num >= 1800){
+                    end_type = 1;
+                    clearInterval(interVal);
+                    end_of_game()
+                } else {
+                    time_num++;
+                    $('.start_timer').find('div').css('width', (time_num / 1800 * 100) + '%');
+                    $('.start_timer').find('img').css('margin-left', (time_num / 1800 * 100) + '%');
+                }
+            }, 1000);
+        }
+        function calculateScore(correctCount, incorrectCount) {
+            var correctPercentage = (correctCount / (correctCount + incorrectCount)) * 100;
+            return Math.trunc(correctPercentage);
+        }
+
+        $(document).ready(function(){
+            fetchQuiz()
+            setTimeout(function(){
+                $('.quiz_text').animate({'margin-left':'-100vw'},500,function(){
+                    $('.first_rending_page').fadeOut(200)
+                })
+            },4000)
+        })
+        $(document).on('click','.game_start_btn',function(){
+            $(this).slideUp(200)
+            // $('.guid_inner_text').fadeOut(500,function(){
+                $('.guid_text').animate({
+                    'width': '43vw',
+                    'height': '50vh',
+                },500,function(){
+                    $('.quiz_wrapper').fadeIn(500,function(){
+                        run_quiz_update(currentIndex)
+                        start_timer()
+                    })
+                })
+            // })
+        })
+
+
+
+
+
+
+        function removeSpecialCharactersAndWhitespace(str) {
+            return str.replace(/[^\w\sㄱ-ㅎㅏ-ㅣ가-힣]/gi, '');
+        }
+        let check_empty = 0;
+
+        $(document).on('click','.check_btn',function(){
+            const quizChecked = $('.user_answer').find('input').val();
+            if (quizChecked != "") {
+                const userAnswer = removeSpecialCharactersAndWhitespace(quizChecked).toLowerCase();
+                const quizAnswer = removeSpecialCharactersAndWhitespace(quizInfo[currentIndex].answer).toLowerCase();
+                console.log(userAnswer + " == ?" + quizAnswer);
+                if (userAnswer === quizAnswer) {
+                    $('.quiz').addClass('good');
+                    goodNum++;
+                } else {
+                    $('.quiz').addClass('bad');
+                    $('.answer').removeClass('none');
+                    badNum++;
+                }
+                $('.next_btn').removeClass('none');
+                $('.check_btn').addClass('none');
+            } else {
+                check_empty++;
+                if(check_empty > 1){
+                    badNum++;
+                    check_empty = 0;
+                    $('.quiz').addClass('bad');
+                    $('.answer').removeClass('none');
+                    $('.next_btn').removeClass('none');
+                    $('.check_btn').addClass('none');
+                }else {
+                    alert('답이 비어있습니다. 한 번 더 비어있는 상태로 클릭 시 오답 처리니 주의해 주세요.');
+                }
+            }
+        })
+        $(document).on('click','.next_btn',function(){
+            if (currentIndex < quizInfo.length - 1) {
+                currentIndex++;
+                run_quiz_update(currentIndex)
+            } else {
+                end_type = 0;
+                clearInterval(interVal);
+                end_of_game()
+            }
+        })
+    </script>
+</body>
+</html>
