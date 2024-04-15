@@ -309,6 +309,7 @@ body {
   top: 20px;
   left: 20px;
   z-index: 10;
+  font-size: 2.7vmax;
 }
 .redy_to_play .game_start_wrapper .guid_text .quiz_wrapper .quiz.bad {
   position: relative;
@@ -317,9 +318,10 @@ body {
   content: "오답!";
   color: #df1047;
   position: absolute;
-  top: 60px;
+  top: 20px;
   left: 20px;
   z-index: 10;
+  font-size: 2.7vmax;
 }
 .redy_to_play .game_start_wrapper .guid_text .timer {
   position: absolute;

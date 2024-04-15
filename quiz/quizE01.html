@@ -60,6 +60,7 @@
         let quizInfo = [];
         let goodNum = 0;
         let badNum = 0;
+        let interVal = "";
         
         const fetchQuiz = () => {
             fetch("https://spearboy.github.io/class2024/json/gisa_test.json").then(res => res.json()).then(items => {
@@ -81,7 +82,11 @@
             let innerHtml = "";
 
             innerHtml += `<div class="quiz">`;
-                innerHtml += `<div class="number">${idx+1}번 문제입니다. 남은 문제는 이제 ${quizInfo.length - (currentIndex+1)}문제!</div>`;
+                if(quizInfo.length == currentIndex-1) {
+                    innerHtml += `<div class="number">${idx+1}번 문제입니다. 마지막 문제!</div>`;
+                }else {
+                    innerHtml += `<div class="number">${idx+1}번 문제입니다. 남은 문제는 이제 ${quizInfo.length - (currentIndex+1)}문제!</div>`;
+                }
                 innerHtml += `<div class="question">문제의 정답을 적어주세요!</div>`;
                 if(quizInfo[idx].desc){
                     innerHtml +=`<div class="desc">Q. ${quizInfo[idx].question}<br><br>${quizInfo[index].desc}<></div>`;
@@ -200,7 +205,7 @@
                 currentIndex++;
                 run_quiz_update(currentIndex)
             } else {
-                end_type = 0;
+                end_type = 1;
                 clearInterval(interVal);
                 end_of_game()
             }
