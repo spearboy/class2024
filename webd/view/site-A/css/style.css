@@ -17,6 +17,8 @@ li {
     margin: 0px auto;
 }
 #header {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 100px;
     display: flex;
@@ -24,7 +26,6 @@ li {
 }
 #header .logo {
     width: 20%;
-    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,24 +42,160 @@ li {
     display: flex;
     margin-top: 60px;
 }
-#header .nav > ul > li {}
+#header .nav > ul > li {
+    display: block;
+}
 #header .nav > ul > li > a {
+    width: 100%;
     padding: 10px 40px ;
     display: inline-block;
     background-color: rgb(148, 210, 248);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+#header .nav > ul > li > a:hover {
+    background-color: rgb(41, 112, 156);
+}
+#header .nav > ul > li > ul {
+    display: none;
+}
+#header .nav > ul > li > ul > li {
+    display: block;
+}
+#header .nav > ul > li > ul > li > a {
+    width: 100%;
+    padding: 10px 40px ;
+    display: inline-block;
+    background-color: rgb(88, 191, 255);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+#header .nav > ul > li > ul > li > a:hover {
+    background-color: rgb(41, 112, 156);
 }
 #slider {
     width: 100%;
     height: 300px;
     background-color: #bbb;
 }
+.slider_wrap {
+
+}
+.slider_wrap .slider {
+    display: none;
+    position: relative;
+}
+.slider_wrap .slider:first-child {
+    display: block;
+}
 #main {
     width: 100%;
+    display: flex;
+}
+#main .notice {
+    width: 33.3333%;
     height: 200px;
-    background-color: #ddd;
+    padding: 20px;
+}
+#main .notice h3{
+    font-style: 24px;
+    margin-bottom: 5px;
+}
+#main .notice ul {
+    font-style: 24px;
+    margin-bottom: 5px;
+}
+#main .notice li {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.8;
+}
+#main .notice li a {
+    transition: all 0.3s ease;
+}
+#main .notice li a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+#main .notice li span {
+    text-align: right;
+}
+#main .gallery {
+    width: 33.3333%;
+    height: 200px;
+    padding: 20px;
+}
+#main .gallery h3{
+    font-style: 24px;
+    margin-bottom: 5px;
+}
+#main .gallery ul {
+    font-style: 24px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+#main .link {
+    position: relative;
+    width: 33.3333%;
+    height: 200px;
+    background-color: #ccc;
+    background-image: url('../images/event.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+}
+#main .link h3 {
+    color: #fff;
+}
+#main .link a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 100%;
+    font-size: 20px;
+    transition: all 0.3s ease;
 }
 #footer {
     width: 100%;
     height: 100px;
-    background-color: #eee;
+    display: flex;
+    background-color: rgb(85, 149, 204);
+}
+#footer .left {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#footer .left > div {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer .left .menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#footer .left .copy{
+}
+#footer .right {
+    width: 20%;
+    height: 50px;
+}
+#footer .right select{
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 30px;
 }

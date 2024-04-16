@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>유진건설</title>
 </head>
 <body>
@@ -44,9 +45,92 @@
                 </ul>
             </nav>
         </header>
-        <article id="slider"></article>
-        <main id="main"></main>
-        <footer id="footer"></footer>
+        <article id="slider">
+            <div class="slider_wrap">
+                <div class="slider">
+                    <img src="./images/banner01.png" alt="1">
+                </div>
+                <div class="slider">
+                    <img src="./images/banner02.png" alt="2">
+                </div>
+                <div class="slider">
+                    <img src="./images/banner03.png" alt="3">
+                </div>
+            </div>
+        </article>
+        <main id="main">
+            <section class="notice">
+                <h3>공지사항</h3>
+                <div>
+                    <ul>
+                        <li><a href="">신입사원을 환영해주세요</a><span>2024.04.08</span></li>
+                        <li><a href="">인사이동 안내문</a><span>2024.03.20</span></li>
+                        <li><a href="">유진건설 임직원 안내사항</a><span>2024.01.10</span></li>
+                        <li><a href="">유진건설 주주 총회 안내사항</a><span>2024.01.05</span></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="gallery">
+                <h3>갤러리</h3>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="./images/gal01.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/gal02.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./images/gal03.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="link">
+                <h3>이벤트 바로가기</h3>
+                <a href="">바로가기</a>
+            </section>
+        </main>
+        <footer id="footer">
+            <div class="left">
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">저자권 보호정책</a></li>
+                        <li><a href="#">이메일 무단수집 거부</a></li>
+                        <li><a href="#">CCTV설치 및 운영</a></li>
+                    </ul>
+                </div>
+                <div class="copy">
+                    COPYRIGHT 2024, ALL Rights Reserve
+                </div>
+            </div>
+            <div class="right">
+                <select>
+                    <option value="">가나 건설회사</option>
+                    <option value="">다라 건설회사</option>
+                    <option value="">마바 건설회사</option>
+                </select>
+            </div>
+        </footer>
     </div>
+    <script>
+        $(function(){
+            // 1차 메뉴를 클릭하면 //alert()
+            // $(document).on('click','.nav > ul > li',function(){
+            //     alert('1')
+            // })
+            // 1차 메뉴중 두번째 클릭시 //alert()
+            $('.nav > ul > li').eq(1).click(function(){
+                alert('1')
+            })
+        })
+    </script>
 </body>
 </html>
