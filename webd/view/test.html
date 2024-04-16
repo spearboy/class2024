@@ -1,14 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>레이아웃 페이지</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        .wrapper {
+            width: 100%;
+            height: auto;
+        }
+        .header {
+            position: relative;
+            z-index: 1;
+            width: 1340px;
+            height: 100px;
+            margin: 0px auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo {
+            width: 240px;
+            height: 100%;
+            background-color: #9b1e1e;
+        }
+        .nav {
+            width: 1100px;
+            height: 100%;
+            background-color: #df4545;
+        }
+
+        .menu_wrapper {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 10px;
+            margin-top: 59px;
+        }
+        .menu_wrapper > li > a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #ddd;
+        }
+        .menu_wrapper > li > a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #ddd;
+        }
+        .menu_wrapper > li > ul > li > a{
+            display: inline-block;
+            padding: 10px;
+            background-color: #ddd;
+        }
+        .sub_menu {
+            height: 0px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .slider_wrapper {
+            position: relative;
+            width: 100%;
+            height: 350px;
+        }
+        .slider_item {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        .slider_item:nth-child(1) {
+            opacity: 1;
+        }
+        .slider_item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        .link {
+            width: 1340px;
+            height: 80px;
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            z-index: 10;
+            transform: translateX(-50%);
+            background-color: #8a5353;
+        }
+        .content_wrapper {
+            position: relative;
+            width: 1340px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: 0px auto;
+        }
+        .content_inner_wrapper {
+            width: 100%;
+            height: 200px;
+            background-color: #3f1b1b;
+        }
+        .banner_wrapper {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .banner_wrapper div {
+            width: 50%;
+            height: 100%;
+            background-color: #352929;
+        }
+        .banner_wrapper div:last-child {
+            background-color: #610505;
+        }
+        .footer {
+            position: relative;
+            width: 1340px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: 0px auto;
+        }
+        .footer_content {
+            width: 1100px;
+            height: 100%;
+            background-color: #805252;
+        }
+        .footer_inner_wrapper {
+            width: 240px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        .footer_inner_wrapper div {
+            width: 100%;
+            height: 50%;
+            background-color: #9e7d7d;
+        }
+        .footer_inner_wrapper div:last-child {
+            background-color: #574e4e;
+        }
+    </style>
 </head>
-
 <body>
-    
-</body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul class="menu_wrapper">
+                    <li><a href="">1차 메뉴</a>
+                        <ul class="sub_menu">
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">1차 메뉴</a>
+                        <ul class="sub_menu">
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">1차 메뉴</a>
+                        <ul class="sub_menu">
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">1차 메뉴</a>
+                        <ul class="sub_menu">
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                            <li><a href="">2차 메뉴</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="slider_wrapper">
+            <div class="slider_item">
+                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider01.jpg" alt="1">
+                <span class="text">Image 1</span>
+            </div>
+            <div class="slider_item">
+                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider02.jpg" alt="2">
+                <span class="text">Image 2</span>
+            </div>
+            <div class="slider_item">
+                <img src="https://webstoryboy.github.io/webstoryboy/w_webd/slider/slider03.jpg" alt="3">
+                <span class="text">Image 3</span>
+            </div>
+        </div>
+        <div class="content_wrapper">
+            <div class="link"></div>
+            <div class="content_inner_wrapper"></div>
+            <div class="banner_wrapper">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer_content"></div>
+            <div class="footer_inner_wrapper">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        const sliderItem = document.querySelectorAll('.slider_item');
+        const target_hover = document.querySelectorAll('.nav > ul > li');
+
+
+        let currentIndex = 0;
+
+
+        target_hover.forEach(element => {
+            element.addEventListener('mouseover',function(){
+                this.querySelector('.sub_menu').style.height = '164px';
+            })
+            element.addEventListener('mouseout',function(){
+                this.querySelector('.sub_menu').style.height = '0px';
+            })
+        });
+        setInterval(() => {
+            
+            let nextIndex = (currentIndex+1) %3;
+
+            sliderItem[currentIndex].style.opacity = 0;
+            sliderItem[nextIndex].style.opacity = 1;
+            console.log("currentIndex "+currentIndex)
+            console.log("nextIndex "+nextIndex)
+
+            currentIndex = nextIndex;
+        }, 3000);
+    </script>
+</body>
 </html>
