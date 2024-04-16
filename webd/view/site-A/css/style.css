@@ -76,13 +76,12 @@ li {
 #slider {
     width: 100%;
     height: 300px;
-    background-color: #bbb;
+    overflow: hidden;
 }
 .slider_wrap {
-
+    display: flex;
 }
 .slider_wrap .slider {
-    display: none;
     position: relative;
 }
 .slider_wrap .slider:first-child {

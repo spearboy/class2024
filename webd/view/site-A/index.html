@@ -130,6 +130,22 @@
             $('.nav > ul > li').eq(1).click(function(){
                 alert('1')
             })
+
+
+            let currentIndex = 0;
+
+            $(".slider_wrap").append($('.slider').first().clone(true));
+            setInterval(() => {
+                currentIndex++;
+                $('.slider_wrap').animate({'margin-left':(-currentIndex*100)+"%"},300)
+
+                if(currentIndex == 3){
+                    setTimeout(() => {
+                        $('.slider_wrap').css({'margin-left':'0%'})
+                        currentIndex = 0;
+                    }, 700);
+                }
+            }, 3000);
         })
     </script>
 </body>
