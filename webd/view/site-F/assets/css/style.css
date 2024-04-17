@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: #666;
+}
+a {
+    text-decoration: none;
+    color: #666;
+}
+li {
+    list-style: none;
+}
+.container {
+    width: 1340px;
+    margin: 0px auto;
+    height: inherit;
+}
+#wrap {
+    width: 100%;
+}
+#header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    background-color: green;
+}
+#header .logo {
+    width: 20%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    color: #fff;
+}
+#header .nav{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: right;
+}
+#header .nav > ul{
+    width: 80%;
+    /* height: 0px; */
+    margin-top: 60px;
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+}
+#header .nav > ul > li {}
+#header .nav > ul > li > a {
+    color: #fff;
+    background-color: rgba(255, 255, 255,0.1);
+    padding: 10px 40px;
+    display: inline-block;
+}
+#header .nav > ul > li > a:hover {
+    background-color: rgba(255, 255, 255,0.5);
+}
+#header .nav > ul > li > ul {
+    display: none;
+}
+#header .nav > ul > li > ul > li {
+    text-align: center;
+}
+#header .nav  > ul > li > ul > li > a {
+    color: #fff;
+    background-color: rgba(255, 255, 255,0.1);
+    padding: 10px 40px;
+    display: inline-block;
+}
+#header .nav  > ul > li > ul > li > a:hover {
+    background-color: rgba(255, 255, 255,0.5);
+}
+#slider {
+    width: 100%;
+    height: 350px;
+    background-color: #ccc;
+    position: relative;
+}
+#slider .slider_wrap {
+    display: flex;
+}
+#slider .slider_wrap .slider {
+    min-width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+#slider .slider_wrap .slider:nth-child(1) {
+    background-image: url(../image/slider1.png);
+}
+#slider .slider_wrap .slider:nth-child(2) {
+    background-image: url(../image/slider2.png);
+}
+#slider .slider_wrap .slider:nth-child(3) {
+    background-image: url(../image/slider3.png);
+}
+#slider .slider_wrap .slider .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#slider .slider_wrap .slider .text h3 {
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+#slider .slider_wrap .slider .text p {
+    color: #fff;
+}
+#slider .slider_link {
+    width: 1340px;
+    height: 80px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #a9a9a9;
+}
+#slider .slider_link ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+#slider .slider_link ul > li {
+    width: 20%;
+    height: 100%;
+}
+
+#slider .slider_link ul > li > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#slider .slider_link ul > li > a img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#main .banner {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    flex-wrap: wrap;
+}
+#main .banner img {
+    width: 130px;
+    height: 80px;
+    margin: 10px 50px 10px 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+#main .banner h3 {
+    font-size: 24px;
+    margin-top: 24px;
+    margin-bottom: 5px;
+}
+
+#main .banner a {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+}
+#main .banner a img {
+    width: 70px;
+    object-fit: contain;
+}
+#main .notice {
+    width: 50%;
+    height: 300px;
+    background-color: #eee;
+    justify-content: space-between;
+    padding: 20px;
+}
+#main .notice .title {
+    margin-bottom: 20px;
+}
+#main .notice .title ul {
+    display: flex;
+}
+#main .notice .title ul > li > a {
+    font-size: 24px;
+    margin-right: 10px;
+    display: inline-block;
+}
+#main .notice .title ul > li.active > a {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+#main .notice .cont {
+    
+}
+
+#main .notice .cont> div:nth-child(1) ul {
+    padding-left: 20px;
+}
+#main .notice .cont> div:nth-child(1) ul >li {
+    line-height: 1.8;
+    list-style: disc;
+}
+#main .notice .cont> div:nth-child(1) ul > li a {
+    width: 300px;
+    display: inline-block;
+}
+#main .notice .cont> div:nth-child(1) ul > li a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+}
+#main .notice .cont> div:nth-child(1) ul > li span {
+    width: 100px;
+}
+
+#main .notice .cont> div:nth-child(2) ul {
+    display: flex;
+}
+#main .notice .cont> div:nth-child(2) ul li {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+#main .notice .cont> div:nth-child(2) ul li:hover {
+    opacity: 0.6;
+}
+#main .notice .cont> div:nth-child(2) ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#main .notice .cont> div:nth-child(2) ul li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#footer {
+    display: flex;
+}
+
+#footer .footer1 {
+    width: 20%;
+    height: 100px;
+    background-color: #a1a1a1;
+}
+
+#footer .footer2 {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer .footer2 .menu {
+    width: 100%;
+    height: 50px;
+    background-color: #b1b1b1;
+}
+
+#footer .footer2 .copy {
+    width: 100%;
+    height: 50px;
+    background-color: #c1c1c1;
+}
