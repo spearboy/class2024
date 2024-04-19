@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Mouse Effect</title>
+    <style>
+        body {
+            cursor: none;
+        }
+        .main__inner {
+            display: flex;
+            justify-content: center;
+            padding: 50px 200px;
+        }
+        .main__inner p {
+            max-width: 100%;
+            box-sizing: border-box;
+            font-size: 2.4vmax;
+            text-align: center;
+            color: #fff;
+            font-family: "Jura";
+        }
+        .main__inner p span,
+        .main__inner p i,
+        .main__inner p strong {
+            font-size: 2.4vmax;
+            color: #bb8989;
+            font-family: "Jura";
+            font-style: normal;
+            font-weight: 400;
+        }
+        .main__info {
+            width: 100%;
+            font-family: "Anta";
+            color: #d2d2d2;
+            position: absolute;
+            top: 60px;
+            left: 0px;
+            font-size: 14px;
+            padding: 0px 16px;
+        }
+        .main__info ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .cursor{
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(1px);
+            user-select: none;
+            pointer-events: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .cursor::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            transform: translate(-50%,-50%);
+            transition: all 0.3s ease;
+        }
+        .cursor::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            transform: translate(-50%,-50%) rotate(90deg);
+            transition: all 0.3s ease;
+        }
+        .cursor.on_span1 {
+            background-color: rgba(144, 241, 134, 0.498);
+        }
+        .cursor.on_span1::before {
+            background-color: #750404;
+        }
+        .cursor.on_span1::after {
+            background-color: #750404;
+        }
+        .cursor.on_span2 {
+            background-color: rgba(244, 255, 31, 0.498);
+            transform: scale(0.2);
+        }
+        .cursor.on_span2::before {
+            background-color: #075802;
+        }
+        .cursor.on_span2::after {
+            background-color: #075802;
+        }
+        .cursor.on_span3 {
+            background-color: rgba(9, 27, 192, 0.498);
+            border-radius: 0px;
+            transform: rotate(360deg) scale(1.4);
+        }
+        .cursor.on_span3::before {
+            background-color: #00b9cd;
+        }
+        .cursor.on_span3::after {
+            background-color: #00b9cd;
+        }
+        .cursor.on_span4 {
+            background-color: rgba(9, 27, 192, 0);
+            border-radius: 0px;
+            transform: rotate(360deg) ;
+        }
+        .cursor.on_span4::before {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: transparent;
+            border-radius: 100%;
+            border:1px solid #fff;
+        }
+        .cursor.on_span4::after {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: transparent;
+            border-radius: 100%;
+            border:1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header__inner">
+                <h1>Mouse Effect <em>01</em></h1>
+            </div>
+        </header>
+        <main id="main">
+            <div class="cursor"></div>
+            <div class="main__inner">
+                <p>
+                    <span>JavaScript</span> is a dynamic <span>programming</span> language primarily used for web development. It enables interactive features on web pages, <span>manipulating</span> HTML and CSS in the user's browser. Supported by all major browsers, JavaScript powers modern web applications and interfaces. With frameworks like React and Angular, it <span>streamlines</span> the development of complex, responsive websites.
+                </p>
+            </div>
+            <div class="main__info">
+                <ul>
+                    <li>clientX <span class="clX">0</span></li>
+                    <li>clientY <span class="clY">0</span></li>
+                    <li>offsetX <span class="ofX">0</span></li>
+                    <li>offsetY <span class="ofY">0</span></li>
+                    <li>pageX <span class="peX">0</span></li>
+                    <li>pageY <span class="peY">0</span></li>
+                </ul>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer__inner">
+                <nav>
+                    <ul>
+                        <li class="active"><a href="mouse01.html">01</a></li>
+                        <li><a href="mouse02.html">02</a></li>
+                        <li><a href="mouse03.html">03</a></li>
+                        <li><a href="mouse04.html">04</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const curSor = document.querySelector('.cursor');
+        window.addEventListener("mousemove", function(e) {
+            document.querySelector(".clX").innerHTML = e.clientX;
+            document.querySelector(".clY").innerHTML = e.clientY;
+            document.querySelector(".ofX").innerHTML = e.offsetX;
+            document.querySelector(".ofY").innerHTML = e.offsetY;
+            document.querySelector(".peX").innerHTML = e.pageX;
+            document.querySelector(".peY").innerHTML = e.pageY;
+            curSor.style.top = (e.clientY-50)+"px";
+            curSor.style.left = (e.clientX-50)+"px";
+        });
+        document.querySelectorAll('.main__inner span').forEach((e,index) => {
+            e.addEventListener('mouseover',function(){
+                curSor.classList.add('on_span'+(index+1))
+            })
+            e.addEventListener('mouseout',function(){
+                curSor.classList.remove('on_span'+(index+1))
+            })
+        });
+        // for( let i = 1; i<4; i++){
+        //     document.querySelector('.main__inner span:nth-child('+i+')').addEventListener('mouseover',function(){
+        //         curSor.classList.add('on_span'+i)
+        //     })
+        //     document.querySelector('.main__inner span:nth-child('+i+')').addEventListener('mouseout',function(){
+        //         curSor.classList.remove('on_span'+i)
+        //     })
+        // }
+    </script>
+</body>
+</html>

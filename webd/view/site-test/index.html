@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">남도맛기행 축제</div>
+            <nav></nav>
+        </header>
+        <div class="right_contents">
+            <article>
+                <div class="slider_wrap">
+                    <div class="slider_item">
+                        <img src="./img/slider_1.png" alt="">
+                        <span>1</span>
+                    </div>
+                    <div class="slider_item">
+                        <img src="./img/slider_1.png" alt="">
+                        <span>2</span>
+                    </div>
+                    <div class="slider_item">
+                        <img src="./img/slider_1.png" alt="">
+                        <span>3</span>
+                    </div>
+                </div>
+            </article>
+            <main>
+                <section>
+                    <h3>공지사항</h3>
+                    <div class="info">
+                        <div>
+                            <a href="">이게 공지사항이다.</a><span>2024.02.26</span>
+                        </div>
+                        <div>
+                            <a href="">이게 공지사항이다.</a><span>2024.02.26</span>
+                        </div>
+                        <div>
+                            <a href="">이게 공지사항이다.</a><span>2024.02.26</span>
+                        </div>
+                        <div>
+                            <a href="">이게 공지사항이다.</a><span>2024.02.26</span>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3>갤러리</h3>
+                    <div class="gall">
+                        <div><img src="" alt=""></div>
+                        <div><img src="" alt=""></div>
+                        <div><img src="" alt=""></div>
+                    </div>
+                </section>
+                <section>
+                    <h3>배너</h3>
+                </section>
+            </main>
+            <footer></footer>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+
+        $(".slider_wrap").append($('.slider_item').first().clone(true));
+        setInterval(() => {
+            currentIndex++;
+            $('.slider_wrap').animate({'margin-left':(-currentIndex*100)+"%"},300)
+
+            if(currentIndex == 3){
+                setTimeout(() => {
+                    $('.slider_wrap').css({'margin-left':'0%'})
+                    currentIndex = 0;
+                }, 700);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

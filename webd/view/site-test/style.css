@@ -1,0 +1,99 @@
+*{margin: 0px; padding: 0px;}
+
+.container {
+    width: 1000px;
+    height: 650px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+header {
+    min-width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #E88D67;
+}
+.logo {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+}
+nav {
+    width: 100%;
+    height: 550px;
+    
+}
+.right_contents {
+    width: 100%;
+    height: 100%;
+    background-color: #aaa;
+}
+article {
+    width: 100%;
+    min-width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+.slider_wrap {
+    display: flex;
+    min-width: inherit;
+    width: inherit;
+    height: inherit;
+}
+.slider_item {
+    min-width: inherit;
+    height: inherit;
+    background-color: aqua;
+}
+main {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+main > section {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    padding: 10px;
+}
+main > section > h3 {
+    margin-bottom: 10px;
+}
+.info {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.info div {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+.gall {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

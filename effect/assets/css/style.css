@@ -3,7 +3,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    box-sizing: 0px;
+    box-sizing: border-box;
     font-family: "Montserrat";
 }
 a {
@@ -52,7 +52,7 @@ body {
 }
 #footer {
     width: 100%;
-    height: 60px;
+    /* height: 60px; */
     /* background-color: rgba(255,255,255,0.1); */
 }
 #footer .footer__inner {
@@ -72,4 +72,13 @@ body {
     color: #d2d2d2;
     display: inline-block;
     line-height: 1;
+}
+#footer .footer__inner nav ul li.active a {
+    border: 1px solid #d2d2d2;
+    padding: 3px 10px;
+    border-radius: 50px;
+    color: #272727;
+    display: inline-block;
+    line-height: 1;
+    background-color: #d2d2d2;
 }
