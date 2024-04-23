@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+li {
+    list-style: none;
+}
+body {
+    background-color: #dcb8b8;
+}
+#header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 99999;
+}
+.header__inner {
+    padding: 20px;
+    position: relative;
+}
+.header__inner h1 {
+    font-weight: 200;
+    font-size: 40px;
+    letter-spacing: -0.1vw;
+}
+.header__inner h1 a {
+    font-weight: 200;
+    font-size: 40px;
+    letter-spacing: -0.1vw;
+    line-height: 1;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+.header__inner p {
+    color: #956b6b;
+}
+.header__inner .link {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.header__inner .link a {
+    background-image: url("../svg/arrow.svg");
+    font-weight: 200;
+    padding-right: 20px;
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}

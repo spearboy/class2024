@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+li {
+    list-style: none;
+}
+body {
+    background-color: #272727;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#wrap {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+#header {
+    width: 100%;
+    height: 60px;
+    /* background-color: rgba(255,255,255,0.3); */
+}
+.header__inner {
+    border-top: 2px solid #d2d2d2;
+    border-bottom: 1px solid #d2d2d2;
+}
+#header .header__inner h1 {
+    color: #d2d2d2;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px 0;
+    line-height: 1;
+}
+#header .header__inner h1 a {
+    color: #d2d2d2;
+    font-weight: 300;
+    font-size: 18px;
+    padding: 10px 0;
+    line-height: 1;
+}
+#header .header__inner h1 em {
+    font-weight: 800;
+    font-style: normal;
+}
+#main {
+
+}
+#footer {
+    width: 100%;
+    z-index: 20000;
+    /* height: 60px; */
+    /* background-color: rgba(255,255,255,0.1); */
+}
+#footer .footer__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+#footer .footer__inner nav {
+}
+#footer .footer__inner nav ul {
+    display: flex;
+}
+#footer .footer__inner nav ul li {
+    margin-right: 5px;
+}
+#footer .footer__inner nav ul li a {
+    border: 1px solid #d2d2d2;
+    padding: 3px 10px;
+    border-radius: 50px;
+    color: #d2d2d2;
+    display: inline-block;
+    line-height: 1;
+    background-color: #272727;
+}
+#footer .footer__inner nav ul li.active a {
+    border: 1px solid #d2d2d2;
+    padding: 3px 10px;
+    border-radius: 50px;
+    color: #272727;
+    display: inline-block;
+    line-height: 1;
+    background-color: #d2d2d2;
+}
+#footer .footer__inner .link {
+    /* position: absolute;
+    right: 0px;
+    bottom: 0px; */
+}
+#footer .footer__inner .link a {
+    text-transform: uppercase;
+    border: 1px solid #d2d2d2;
+    padding: 3px 10px;
+    border-radius: 50px;
+    color: #d2d2d2;
+    display: inline-block;
+    line-height: 1;
+    background-image: url("../svg/arrow_white.svg");
+    padding-right: 30px;
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    background-color: #272727;
+}

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/parallax.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <title>Parallax Effect</title>
+    <style>
+        .main__inner {
+            
+        }
+        .main__inner > section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .main__inner > section:nth-child(even) {
+            background-color: #00000016;
+        }
+        .main__inner > section .num {
+            position: absolute;
+            right:  20px;
+            bottom: 20px;
+            color: #111;
+            font-size: 30px;
+        }
+        .main__inner > section img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            filter: grayscale();
+            overflow: hidden;
+        }
+        .main__inner > section img.active {
+            filter: drop-shadow(2px 4px 6px black);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="header__inner">
+                <h1><a href="index.html">Parallax Effect</a> 01</h1>
+                <p>GSAP scrollTrigger - 애니매이션 기본 효과</p>
+                <div class="link">
+                    <ul>
+                        <li><a href="./mouse01.html">mouse</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div class="main__inner">
+                <section id="section01">
+                    <img src="./assets/img/img1.png" alt="section image">
+                    <span class="num">01</span>
+                </section>
+                <section id="section02">
+                    <img src="./assets/img/img2.png" alt="section image">
+                    <span class="num">02</span>
+                </section>
+                <section id="section03">
+                    <img src="./assets/img/img3.png" alt="section image">
+                    <span class="num">03</span>
+                </section>
+                <section id="section04">
+                    <img src="./assets/img/img4.png" alt="section image">
+                    <span class="num">04</span>
+                </section>
+                <section id="section05">
+                    <img src="./assets/img/img5.png" alt="section image">
+                    <span class="num">05</span>
+                </section>
+                <section id="section06">
+                    <img src="./assets/img/img1.png" alt="section image">
+                    <span class="num">06</span>
+                </section>
+                <section id="section07">
+                    <img src="./assets/img/img2.png" alt="section image">
+                    <span class="num">07</span>
+                </section>
+                <section id="section08">
+                    <img src="./assets/img/img3.png" alt="section image">
+                    <span class="num">08</span>
+                </section>
+                <section id="section09">
+                    <img src="./assets/img/img4.png" alt="section image">
+                    <span class="num">09</span>
+                </section>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="footer__inner">
+                <nav>
+                    <!-- <ul>
+                        <li class="active"><a href="parallax01.html">01</a></li>
+                        <li><a href="parallax02.html">02</a></li>
+                        <li><a href="parallax03.html">03</a></li>
+                        <li><a href="parallax04.html">04</a></li>
+                    </ul> -->
+                </nav>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+
+    <script>
+        // 01
+        gsap.to("#section01 img",{
+            duration: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100
+        });
+        // 02 : trigger
+        gsap.to("#section02 img",{
+            duration: 2,
+            x: 500,
+            rotation:360,
+            borderRadius: 100,
+            // 화면에 보이면 바로 움직임
+            scrollTrigger: {
+                trigger: "#section02 img"
+            }
+        });
+        // 03 : toggleAction
+        gsap.to("#section03 img",{
+            dutation: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+            // onEnter, onLeave, onEnterBack, onLeaveBack
+            // action: 
+            // "play" 애니메이션 재생
+            // "pause" 애니메이션의 일시정지
+            // "resume" 애니메이션 정지시점부터 다시시작
+            // "reset" 애니메이션 초기상태로 초기화 (재생X)
+            // "restart" 애니메이션 초기상태로 초기화 및 다시재생
+            // "complete"
+            // "reverse"
+            // "none"
+            scrollTrigger: {
+                trigger: "#section03 img",
+                toggleActions: "play none reverse none"
+            }
+        })    
+        // 04 : start, end : 애니메이션 시작, 끝 조절
+        gsap.to("#section04 img",{
+            dutation: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+            scrollTrigger: {
+                trigger: "#section04 img",
+                toggleActions: "play none reverse none",
+                markers: false,
+                start: "top 50%",
+                end: "bottom 20%"
+            }
+        })    
+        // 05 : scrub : 스크롤 양 따라서 움직임
+        gsap.to("#section05 img",{
+            dutation: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+            scrollTrigger: {
+                trigger: "#section05 img",
+                markers: false,
+                start: "top 50%",
+                end: "bottom 10%",
+                scrub: true  // boolean || Number
+            }
+        })    
+        // 06 : pin : css stiky 와 같은 효과
+        gsap.to("#section06 img",{
+            dutation: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+            scrollTrigger: {
+                trigger: "#section06 img",
+                start: "top 50%",
+                end: "bottom 200px",
+                scrub: true,
+                pin: true
+            }
+        })    
+        // 07 : toggleClass : 클래스를 토글
+        gsap.to("#section07 img",{
+            dutation: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+            scrollTrigger: {
+                trigger: "#section07 img",
+                start: "top center",
+                end: "bottom 200px",
+                scrub: true,
+                toggleClass: "active",
+                markers: false,
+                id: "box7"
+            }
+        })    
+        // 08 : callBack 
+        gsap.to("#section08 img",{
+            dutation: 2,
+            x: 500,
+            rotation: 360,
+            borderRadius: 100,
+            scrollTrigger: {
+                trigger: "#section08 img",
+                start: "top center",
+                end: "bottom 200px",
+                scrub: true,
+                markers: true,
+                // onEnter: () => {
+                //     console.log('onEnter')
+                // },
+                // onLeave: () => {
+                //     console.log('onLeave')
+                // },
+                // onEnterBack: () => {
+                //     console.log('onEnterBack')
+                // },
+                // onLeaveBack: () => {
+                //     console.log('onLeaveBack')
+                // }
+                onUpdate: (self) => {
+                    console.log("onUpdate", self.progress.toFixed(3))
+                },
+                onToggle: (self) => {
+                    console.log("onToggle", self.isActive)
+                }
+            }
+        })    
+    </script>
+</body>
+
+</html>

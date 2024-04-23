@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/mouse.css">
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Jura:wght@300..700&family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <title>Mouse Effect</title>
     <style>
         body {
-            /* cursor: none; */
+            cursor: none;
         }
         #main {
             width: 100%;
@@ -33,14 +33,17 @@
             margin-left: -17.4vw;
             letter-spacing: -1px;
         }
-        .main__inner p span,
-        .main__inner p i,
-        .main__inner p strong {
-            font-size: 2.4vmax;
-            color: #bb8989;
+        .main__inner p span{
+            max-width: 100%;
+            box-sizing: border-box;
+            font-size: 17.4vmax;
+            font-weight: 900;
+            text-align: center;
+            white-space: nowrap;
+            color: #fff;
             font-family: "Orbitron";
-            font-style: normal;
-            font-weight: 400;
+            margin-left: -4.4vw;
+            letter-spacing: -1px;
         }
         .main__info {
             width: 100%;
@@ -64,8 +67,8 @@
             height: 100px;
             background-color: rgba(0, 0, 0, 0.1);
             position: absolute;
-            top: 0px;
-            left: 0px;
+            top: -100px;
+            left: -100px;
             border-radius: 100%;
             z-index: 1000;
             backdrop-filter: blur(1px);
@@ -95,20 +98,139 @@
             transform: translate(-50%,-50%) rotate(90deg);
             transition: all 0.3s ease;
         }
+        .on_span1{
+            background-color: rgba(255, 0, 0, 0.373);
+        }
+        .on_span1::before {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: transparent;
+            border-radius: 100%;
+            border:1px solid #fff;
+        }
+        .on_span1::after {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: transparent;
+            border-radius: 100%;
+            border:1px solid #fff;
+        }
+        .on_span2{
+            background-color: #ffb3006c;
+        }
+        .on_span2::before {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: transparent;
+            border-radius: 0px;
+            border:1px solid #fff;
+        }
+        .on_span2::after {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            background-color: transparent;
+            border-radius: 0px;
+            border:1px solid #fff;
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        .on_span3{
+            background-color: #00471367;
+        }
+        .on_span3::before {
+            width: 0px;
+            height: 0px;
+            background-color: transparent;
+            border-radius: 0px;
+            border-top:0px solid #fff;
+            border-left:20px solid transparent;
+            border-right:20px solid transparent;
+            border-top:30px solid #fff;
+            top: calc(50% + 5px);
+        }
+        .on_span3::after {
+            width: 0px;
+            height: 0px;
+            background-color: transparent;
+            border-radius: 0px;
+            border-top:0px solid #fff;
+            border-left:20px solid transparent;
+            border-right:20px solid transparent;
+            border-top:30px solid #fff;
+            transform: translate(-50%,-50%) rotate(180deg);
+            top: calc(50% - 5px);
+        }
+        .on_span4{
+            background-color: #44ff0050;
+            transform: rotate(45deg);
+        }
+        .on_span5{
+            background-color: #1e00ff;
+        }
+        .on_span5::before {
+            width: 0px;
+            height: 0px;
+            background-color: transparent;
+            border-radius: 0px;
+            border-top:0px solid #fff;
+            border-left:20px solid transparent;
+            border-right:20px solid transparent;
+            border-top:30px solid #fff;
+            top: calc(50% + 5px);
+        }
+        .on_span5::after {
+            width: 0px;
+            height: 0px;
+            background-color: transparent;
+            border-radius: 0px;
+            border-top:0px solid #fff;
+            border-left:20px solid transparent;
+            border-right:20px solid transparent;
+            border-top:30px solid #fff;
+            transform: translate(-50%,-50%) rotate(180deg);
+            top: calc(50% - 5px);
+        }
+        .on_span6{
+            background-color: #00067d;
+        }
+        .on_span7{
+            background-color: #ff00f2;
+        }
+        .on_span8{
+            background-color: #00ffee;
+        }
+        .on_span9{
+            background-color: #fd7e5b;
+        }
+        .on_span10{
+            background-color: #6f0000;
+        }
     </style>
 </head>
 <body>
     <div id="wrap">
         <header id="header">
             <div class="header__inner">
-                <h1>Mouse Effect <em>02</em></h1>
+                <h1><a href="index.html">Mouse Effect</a> <em>02</em></h1>
             </div>
         </header>
         <main id="main">
             <div class="cursor"></div>
             <div class="main__inner">
                 <p>
-                    Effect 2024
+                    <span>E</span>
+                    <span>f</span>
+                    <span>f</span>
+                    <span>e</span>
+                    <span>c</span>
+                    <span>t</span>&nbsp;
+                    <span>2</span>
+                    <span>0</span>
+                    <span>2</span>
+                    <span>4</span>
                 </p>
             </div>
             <div class="main__info">
@@ -132,6 +254,11 @@
                         <li><a href="mouse04.html">04</a></li>
                     </ul>
                 </nav>
+                <div class="link">
+                    <ul>
+                        <li><a href="./parallax01.html">Parallax Effect</a></li>
+                    </ul>
+                </div>
             </div>
         </footer>
     </div>
@@ -146,6 +273,15 @@
             document.querySelector(".peY").innerHTML = e.pageY;
 
             gsap.to((".cursor"),{duration: 0.3,left:e.clientX-50,top: e.clientY-50})
+        });
+        const curSor = document.querySelector('.cursor');
+        document.querySelectorAll('.main__inner p span').forEach((e,index) => {
+            e.addEventListener('mouseover',function(){
+                curSor.classList.add('on_span'+(index+1))
+            })
+            e.addEventListener('mouseout',function(){
+                curSor.classList.remove('on_span'+(index+1))
+            })
         });
     </script>
 </body>
