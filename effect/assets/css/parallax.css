@@ -18,6 +18,9 @@ li {
 body {
     background-color: #dcb8b8;
 }
+body.bg2 {
+    background-color: #bfcabd;
+}
 #header {
     position: fixed;
     top: 0px;
@@ -57,4 +60,24 @@ body {
     background-size: 13px;
     background-repeat: no-repeat;
     background-position: right center;
+}
+.footer__inner {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    font-family: "Poppins";
+}
+
+.footer__inner nav ul {
+    display: flex;
+}
+.footer__inner nav li a {
+    margin-right: 5px;
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 200;
+}
+.footer__inner nav li.active a {
+    text-emphasis: circle;
 }
