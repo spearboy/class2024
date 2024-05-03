@@ -184,27 +184,27 @@
         <!-- footer -->
     </div>
     <script>
-        // $(window).ready(function(){
-        //     $('.nav > ul > li').on('mouseover',function(){
-        //         $('.nav > ul > li').find('ul').stop().slideDown()
-        //     }).on('mouseout',function(){
-        //         $('.nav > ul > li').find('ul').stop().slideUp()
-        //     })
-        // })
-        window.onload=function(){
-            const navList = document.querySelector(".nav > ul");
+        $(window).ready(function(){
+            $('.nav > ul > li').on('mouseover',function(){
+                $('.nav > ul > li').find('ul').stop().slideDown()
+            }).on('mouseout',function(){
+                $('.nav > ul > li').find('ul').stop().slideUp()
+            })
+        })
+        // window.onload=function(){
+        //     const navList = document.querySelector(".nav > ul");
 
-            navList.addEventListener('mouseover',function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "165px";
-                })
-            })
-            navList.addEventListener('mouseout',function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "0px";
-                })
-            })
-        }
+        //     navList.addEventListener('mouseover',function(){
+        //         navList.querySelectorAll(".submenu").forEach(sub => {
+        //             sub.style.height = "165px";
+        //         })
+        //     })
+        //     navList.addEventListener('mouseout',function(){
+        //         navList.querySelectorAll(".submenu").forEach(sub => {
+        //             sub.style.height = "0px";
+        //         })
+        //     })
+        // }
     </script>
 </body>
 
